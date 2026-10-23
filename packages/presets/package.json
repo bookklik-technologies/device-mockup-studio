@@ -1,0 +1,34 @@
+{
+  "name": "@mockup-studio/presets",
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Device Mockup Studio TypeScript presets",
+  "license": "MIT",
+  "homepage": "https://bookklik-technologies.github.io/device-mockup-studio/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bookklik-technologies/device-mockup-studio.git",
+    "directory": "packages/presets"
+  },
+  "bugs": {
+    "url": "https://github.com/bookklik-technologies/device-mockup-studio/issues"
+  },
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@mockup-studio/core": "workspace:^"
+  }
+}

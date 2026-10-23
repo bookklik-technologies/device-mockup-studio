@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "id": "scene_mvj7hwtf_2_ggtl8tyd",
+  "name": "Untitled composition",
+  "width": 800,
+  "height": 600,
+  "duration": 4,
+  "fps": 30,
+  "background": {
+    "type": "gradient",
+    "kind": "linear",
+    "angle": 135,
+    "stops": [
+      {
+        "offset": 0,
+        "color": "#e9e7ff"
+      },
+      {
+        "offset": 1,
+        "color": "#b6c5f1"
+      }
+    ]
+  },
+  "seed": 1,
+  "assets": [],
+  "nodes": [
+    {
+      "id": "shape_mvj7hwtf_1_apphr8ee",
+      "name": "Shape",
+      "type": "shape",
+      "x": 400,
+      "y": 300,
+      "width": 300,
+      "height": 200,
+      "scale": 1,
+      "rotation": -12,
+      "tiltX": 0,
+      "tiltY": 0,
+      "opacity": 1,
+      "visible": true,
+      "locked": false,
+      "shape": "rectangle",
+      "fill": "#386ae8",
+      "stroke": "transparent",
+      "strokeWidth": 0,
+      "radius": 24,
+      "blur": 0
+    }
+  ],
+  "tracks": [],
+  "effects": {
+    "noise": 0,
+    "vignette": 0,
+    "saturation": 1,
+    "contrast": 1,
+    "brightness": 1,
+    "scanlines": 0,
+    "glitch": 0
+  }
+}

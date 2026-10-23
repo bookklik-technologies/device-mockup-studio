@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#242424">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="stylesheet" href="./fonts/fonts.css">
+  <meta name="description" content="Device Mockup Studio is a framework-free 2D and 3D design studio. Compose device mockups, explore physical glass, animate and export portable projects.">
+  <meta name="application-name" content="Device Mockup Studio">
+  <link rel="canonical" href="https://bookklik-technologies.github.io/device-mockup-studio/">
+  <title>Device Mockup Studio — Compose something remarkable</title>
+  <script>
+    (() => {
+      let theme;
+      try { theme = localStorage.getItem('mockup-studio-theme'); } catch { /* Storage may be disabled. */ }
+      if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'light' ? '#ffffff' : '#242424');
+    })();
+  </script>
+  <style>
+    :root { color-scheme:dark; --demo-bg:#1b1b1b; }
+    :root[data-theme=light] { color-scheme:light; --demo-bg:#f3f4f4; }
+    html, body { margin:0; min-height:100%; background:var(--demo-bg); }
+    * { box-sizing:border-box; }
+    #editor { height:100dvh; min-height:580px; width:100%; }
+    .ms-editor .ms-header.ms-demo-header { display:grid; grid-template-columns:auto minmax(0,1fr) auto; grid-template-areas:'brand modes actions'; gap:8px; padding:8px 12px; min-height:56px; }
+    .ms-editor .ms-demo-header .ms-brand { grid-area:brand; margin:0; }
+    .ms-editor .ms-demo-header>.ms-spacer { display:none; }
+    .ms-editor .ms-demo-header .ms-toolbar { grid-area:actions; justify-self:end; justify-content:flex-end; margin:0; width:auto; }
+    .ms-editor .ms-demo-header .demo-scenes { grid-area:modes; justify-self:center; display:flex; align-items:center; gap:2px; font:12px/1.4 'Outfit',sans-serif; white-space:nowrap; }
+    .ms-editor .ms-demo-header .demo-scenes button { min-height:36px; border:0; border-bottom:2px solid transparent; background:transparent; color:var(--ms-text); padding:6px 8px; border-radius:0; font:inherit; cursor:pointer; }
+    .ms-editor .ms-demo-header .demo-scenes button:hover { color:var(--ms-accent); background:transparent; }
+    .ms-editor .ms-demo-header .demo-scenes button[aria-pressed=true] { color:var(--ms-accent); border-bottom-color:var(--ms-accent); }
+    @media(max-width:1050px) { .ms-editor .ms-header.ms-demo-header { grid-template-columns:auto minmax(0,1fr); grid-template-areas:'brand brand' 'modes actions'; gap:4px 8px; } .ms-editor .ms-demo-header .demo-scenes { justify-self:start; } }
+    @media(max-width:560px) { #editor { height:auto; } .ms-editor .ms-header.ms-demo-header { padding:6px 10px; gap:4px 6px; } .ms-editor .ms-demo-header .ms-brand { font-size:14px; gap:7px; } .ms-editor .ms-demo-header .ms-mark { width:26px; height:26px; } .ms-editor .ms-demo-header .demo-mode-name { display:none; } .ms-editor .ms-demo-header .demo-scenes button { min-width:38px; min-height:36px; } .ms-editor .ms-demo-header .ms-toolbar button[aria-haspopup=dialog] { width:40px; min-height:40px; padding:8px; } .ms-editor .ms-demo-header .ms-toolbar button[aria-haspopup=dialog]>span { display:none; } }
+  </style>
+</head>
+<body>
+  <nav class="demo-scenes" aria-label="Workspaces" hidden>
+    <button id="flat-demo" type="button" aria-label="2D mockups" aria-pressed="true">2D<span class="demo-mode-name"> mockups</span></button>
+    <button id="spatial-demo" type="button" aria-label="3D materials" aria-pressed="false">3D<span class="demo-mode-name"> materials</span></button>
+  </nav>
+  <div id="editor"></div>
+  <noscript>This local design studio requires JavaScript.</noscript>
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

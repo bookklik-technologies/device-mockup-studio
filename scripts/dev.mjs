@@ -1,0 +1,10 @@
+import { context } from 'esbuild';
+import { execFileSync } from 'node:child_process';
+import path from 'node:path';
+process.chdir(path.resolve(import.meta.dirname, '..'));
+execFileSync(process.execPath,[path.resolve(import.meta.dirname,'build.mjs')],{stdio:'inherit'});
+const ctx = await context({entryPoints:['apps/demo/main.ts'],bundle:true,format:'esm',outfile:'apps/demo/dist/demo.js',sourcemap:true,target:'es2022',tsconfig:'tsconfig.json'});
+await ctx.watch();
+const server = await ctx.serve({servedir:'apps/demo/dist',host:'127.0.0.1',port:4173});
+console.log(`Device Mockup Studio: http://127.0.0.1:${server.port} (source watch enabled)`);
+for (const signal of ['SIGINT','SIGTERM']) process.on(signal, async()=>{await ctx.dispose();process.exit(0);});

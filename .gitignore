@@ -1,0 +1,6 @@
+node_modules/
+build/
+artifacts/
+packages/*/dist/
+apps/demo/dist/
+test-results/
