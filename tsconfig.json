@@ -14,25 +14,46 @@
     "resolveJsonModule": true,
     "baseUrl": ".",
     "paths": {
-      "@mockup-studio/core": [
+      "@bookklik/device-mockup-studio/core": [
         "packages/core/src/index.ts"
       ],
-      "@mockup-studio/render": [
+      "@bookklik/device-mockup-studio/render": [
         "packages/render/src/index.ts"
       ],
-      "@mockup-studio/presets": [
+      "@bookklik/device-mockup-studio/presets": [
         "packages/presets/src/index.ts"
       ],
-      "@mockup-studio/media": [
+      "@bookklik/device-mockup-studio/media": [
         "packages/media/src/index.ts"
       ],
-      "@mockup-studio/editor": [
+      "@bookklik/device-mockup-studio/editor": [
         "packages/editor/src/index.ts"
       ],
-      "@mockup-studio/sdk": [
+      "@bookklik/device-mockup-studio": [
         "packages/sdk/src/index.ts"
       ],
-      "@mockup-studio/spatial": [
+      "@bookklik/device-mockup-studio/headless": [
+        "packages/sdk/src/headless.ts"
+      ],
+      "@bookklik/device-mockup-studio/core": [
+        "packages/core/src/index.ts"
+      ],
+      "@bookklik/device-mockup-studio/presets": [
+        "packages/presets/src/index.ts"
+      ],
+      "@bookklik/device-mockup-studio/render": [
+        "packages/render/src/index.ts"
+      ],
+      "@bookklik/device-mockup-studio/media": [
+        "packages/media/src/index.ts"
+      ],
+      "@bookklik/device-mockup-studio/editor": [
+        "packages/editor/src/index.ts"
+      ],
+      "@bookklik/device-mockup-studio/spatial": [
+        "packages/spatial/src/index.ts"
+      ],
+      "@bookklik/device-mockup-studio/spatial": [
         "packages/spatial/src/index.ts"
       ]
     }
@@ -41,5 +62,12 @@
     "packages/**/*.ts",
     "apps/**/*.ts",
     "tests/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "artifacts",
+    "packages/*/dist",
+    "apps/demo/dist"
   ]
 }

@@ -17,7 +17,7 @@ Distributed under the [MIT License](./LICENSE).
 - **Motion** — 16 animation presets, timeline preview, animated gradients, and programmatic keyframes and easing
 - **Export** — PNG, JPEG, WebP, looping GIF, frame sequences, and silent WebM/MP4 video; video encoding depends on browser codec support
 - **Projects** — portable JSON files with embedded media, separate local 2D/3D browser drafts, light/dark themes, and 12 locally bundled font families in the demo
-- **Integration** — framework-free embeddable editor, versioned scene model, validation, transactional history, and separate ESM packages with TypeScript declarations
+- **Integration** — framework-free embeddable editor, versioned scene model, validation, transactional history, and one ESM package with modular subpath imports and TypeScript declarations
 
 The editor exposes PNG, WebM, and GIF export; additional formats are available through the SDK. See [features and limitations](./docs/FEATURES.md) and the [device artwork guide](./docs/DEVICE-ARTWORK.md) for details.
 
@@ -25,13 +25,13 @@ The editor exposes PNG, WebM, and GIF export; additional formats are available t
 
 | Package | Purpose |
 |---|---|
-| [`packages/core`](./packages/core) | `@mockup-studio/core` — DOM-free scene model, validation, state/history, math, and animation |
-| [`packages/presets`](./packages/presets) | `@mockup-studio/presets` — device catalog, composition templates, layouts, and social canvas sizes |
-| [`packages/render`](./packages/render) | `@mockup-studio/render` — Canvas renderer, asset loading, and local palette extraction |
-| [`packages/spatial`](./packages/spatial) | `@mockup-studio/spatial` — optional Three.js/WebGL2 renderer, geometry, lighting, and physical glass |
-| [`packages/media`](./packages/media) | `@mockup-studio/media` — image, GIF, frame, and video exports, capability probes, and provider interfaces |
-| [`packages/editor`](./packages/editor) | `@mockup-studio/editor` — optional embeddable editor with scoped styles |
-| [`packages/sdk`](./packages/sdk) | `@mockup-studio/sdk` — convenience facade over the six feature packages |
+| [`packages/core`](./packages/core) | `@bookklik/device-mockup-studio/core` — DOM-free scene model, validation, state/history, math, and animation |
+| [`packages/presets`](./packages/presets) | `@bookklik/device-mockup-studio/presets` — device catalog, composition templates, layouts, and social canvas sizes |
+| [`packages/render`](./packages/render) | `@bookklik/device-mockup-studio/render` — Canvas renderer, asset loading, and local palette extraction |
+| [`packages/spatial`](./packages/spatial) | `@bookklik/device-mockup-studio/spatial` — optional Three.js/WebGL2 renderer, geometry, lighting, and physical glass |
+| [`packages/media`](./packages/media) | `@bookklik/device-mockup-studio/media` — image, GIF, frame, and video exports, capability probes, and provider interfaces |
+| [`packages/editor`](./packages/editor) | `@bookklik/device-mockup-studio/editor` — optional embeddable editor with scoped styles |
+| [`packages/sdk`](./packages/sdk) | `@bookklik/device-mockup-studio` — convenience facade over the six feature packages |
 
 The demo application lives in [`apps/demo`](./apps/demo). Use `core` alone for Node/SSR scene manipulation; rendering and media operations require a browser or an explicit adapter.
 
@@ -65,20 +65,22 @@ The demo uses relative asset URLs, so the same build works under the repository 
 
 ## SDK usage
 
-The workspace is prepared for manual npm publication under `@mockup-studio/*`; preparation does not publish anything. Until you publish, consume packages within the workspace or prepare all seven tarballs:
+The only published package is `@bookklik/device-mockup-studio`. It includes the complete SDK and the `/headless`, `/core`, `/presets`, `/render`, `/media`, `/editor` and `/spatial` subpath entries. Supporting workspace packages are private implementation modules, not separate npm releases.
+
+After publication, install with `npm install @bookklik/device-mockup-studio`. Before publication, prepare the single tarball:
 
 ```bash
 pnpm release:prepare
 ```
 
-Install all seven `.tgz` files from `artifacts/packages` together so their internal dependencies resolve locally. The product and repository use the name Device Mockup Studio; library imports retain the `@mockup-studio/*` namespace.
+Install `artifacts/packages/bookklik-device-mockup-studio-0.3.0.tgz` directly in a consumer project. All workspace modules and their declarations are included; no other `@bookklik` package needs to be published or installed separately.
 
-See [manual publishing](./docs/PUBLISHING.md) for scope ownership, versioning, release validation, and dependency-ordered publish commands. Preparation runs typechecking, builds and archive validation, not unit tests.
+See [manual publishing](./docs/PUBLISHING.md) for scope ownership, versioning, release validation, and the single publish command. Preparation runs typechecking, builds and archive validation, not unit tests.
 
 This browser example creates a scene from your image data URL and exports a PNG:
 
 ```typescript
-import { createScene, createMockup, CanvasRenderer, exportImage } from '@mockup-studio/sdk';
+import { createScene, createMockup, CanvasRenderer, exportImage } from '@bookklik/device-mockup-studio';
 
 async function renderMockup(imageDataURL: string): Promise<Blob> {
   const scene = createScene({
@@ -107,10 +109,10 @@ Set asset dimensions to match your input. Scene positions use node centers, dime
 
 ### Headless embedding (bring your own UI)
 
-Use `@mockup-studio/sdk/headless` for state, undo/redo, rendering and export without mounting the editor or importing its UI or Three.js. It does not create controls, attach DOM elements, save drafts, or render automatically:
+Use `@bookklik/device-mockup-studio/headless` for state, undo/redo, rendering and export without mounting the editor or importing its UI or Three.js. It does not create controls, attach DOM elements, save drafts, or render automatically:
 
 ```typescript
-import { createHeadlessStudio, createScene } from '@mockup-studio/sdk/headless';
+import { createHeadlessStudio, createScene } from '@bookklik/device-mockup-studio/headless';
 
 const studio = createHeadlessStudio({
   canvas: document.querySelector<HTMLCanvasElement>('#preview')!,
@@ -130,8 +132,8 @@ Importing the headless entry is SSR-safe; creating a studio in Node requires a c
 ### Embed the editor
 
 ```typescript
-import { createScene } from '@mockup-studio/core';
-import { mountEditor } from '@mockup-studio/editor';
+import { createScene } from '@bookklik/device-mockup-studio/core';
+import { mountEditor } from '@bookklik/device-mockup-studio/editor';
 
 const container = document.getElementById('editor')!;
 container.style.height = '800px';
@@ -146,7 +148,7 @@ const editor = mountEditor(container, {
 // Call editor.destroy() when unmounting the editor.
 ```
 
-The editor scopes its own CSS and uses no React. Hosts provide fonts and persistence through their own integration; the demo bundles fonts and saves drafts in IndexedDB. **Save project** downloads a portable JSON copy. For 3D, supply `rendererFactory: canvas => new SpatialRenderer(canvas)` from `@mockup-studio/spatial`; see the [spatial guide](./docs/SPATIAL.md).
+The editor scopes its own CSS and uses no React. Hosts provide fonts and persistence through their own integration; the demo bundles fonts and saves drafts in IndexedDB. **Save project** downloads a portable JSON copy. For 3D, supply `rendererFactory: canvas => new SpatialRenderer(canvas)` from `@bookklik/device-mockup-studio/spatial`; see the [spatial guide](./docs/SPATIAL.md).
 
 ## Compatibility and limitations
 

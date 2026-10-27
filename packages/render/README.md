@@ -1,6 +1,8 @@
-# @mockup-studio/render
+# Device Mockup Studio: render (private workspace)
 
-Part of Device Mockup Studio (device-mockup-studio), a TypeScript composition library.
+Private implementation module of Device Mockup Studio. Do not publish or install this workspace separately.
+
+Its public API is available from `@bookklik/device-mockup-studio/render` inside the single `@bookklik/device-mockup-studio` npm package.
 
 License: MIT. See LICENSE for the full license text.
 

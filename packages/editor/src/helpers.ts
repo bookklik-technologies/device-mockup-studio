@@ -1,4 +1,4 @@
-import type { SceneDocument, SceneNode } from '@mockup-studio/core';
+import type { SceneDocument, SceneNode } from '@bookklik/device-mockup-studio/core';
 
 export interface Point { x: number; y: number }
 export function clientToScene(clientX: number, clientY: number, rect: Pick<DOMRect, 'left' | 'top' | 'width' | 'height'>, scene: Pick<SceneDocument, 'width' | 'height'>): Point {

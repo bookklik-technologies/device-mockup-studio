@@ -1,15 +1,15 @@
 # Spatial rendering — v0.3
 
-The optional `@mockup-studio/spatial` package adds real volumetric geometry and raster physically based rendering through Three.js r180/WebGL2. It is not CSS perspective, a faceted screenshot, or a claim of path-traced optics. The existing Canvas2D renderer remains available and unchanged for legacy scenes.
+The optional `@bookklik/device-mockup-studio/spatial` entry point adds real volumetric geometry and raster physically based rendering through Three.js r180/WebGL2. It belongs to the single `@bookklik/device-mockup-studio` package, not a separate install. It is not CSS perspective, a faceted screenshot, or a claim of path-traced optics. The existing Canvas2D renderer remains available and unchanged for legacy scenes.
 
 ## Use it
 
 ```ts
 import {
   createScene, createMesh, createMaterialPreset, createSpatialSettings,
-} from '@mockup-studio/core';
-import { SpatialRenderer } from '@mockup-studio/spatial';
-import { exportImage, exportVideo } from '@mockup-studio/media';
+} from '@bookklik/device-mockup-studio/core';
+import { SpatialRenderer } from '@bookklik/device-mockup-studio/spatial';
+import { exportImage, exportVideo } from '@bookklik/device-mockup-studio/media';
 
 const lens = createMesh({
   geometry: 'sphere', x: 600, y: 450, z: 160,

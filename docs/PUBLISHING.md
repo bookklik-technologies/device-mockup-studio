@@ -1,13 +1,13 @@
 # Manual npm publishing
 
-Nothing in release preparation publishes to npm. The root workspace remains private. Seven ESM packages are public-release candidates at version 0.3.0; each includes declarations, maps, sources, README, MIT license, and third-party notices. The SDK exports both `.` and `./headless`.
+Publish exactly one package: **`@bookklik/device-mockup-studio`**, currently version **0.3.0**. The repository root and six supporting workspace packages are private. The public package is assembled in `packages/sdk` and contains all internal modules; it has no dependency on another `@bookklik` package.
 
 ## Prerequisites
 
 - Node.js 22+ and the pinned package manager (`pnpm@10.34.7`).
-- An npm account allowed to publish all packages under the `@mockup-studio` scope. These settings do not reserve the scope or grant ownership. If you do not own it, rename the scope consistently in manifests, TypeScript paths, imports, examples and docs before building.
-- Confirm each intended version is unused on npm. For subsequent releases update all seven package versions together; keep workspace dependencies as `workspace:^` and regenerate `pnpm-lock.yaml` when dependency changes require it.
-- Review licenses, asset notices, API compatibility and changelog. Existing consumer compatibility has not been certified for every browser; see the root README.
+- An npm account authorized to publish `@bookklik/device-mockup-studio` in the `@bookklik` organization. Package metadata does not grant permission or reserve the name.
+- Confirm version 0.3.0 is unused on npm. For subsequent releases keep root/workspace versions synchronized and regenerate the lockfile if dependencies change.
+- Review the changelog, licenses, device artwork notices and compatibility limits in the root README.
 
 ## Prepare without publishing
 
@@ -16,40 +16,53 @@ pnpm install --frozen-lockfile
 pnpm release:prepare
 ```
 
-This runs typechecking, the production build, `pnpm pack` for every package, and archive validation. It deliberately does **not** run unit or browser tests or use npm credentials. Run tests only after obtaining the required approval for this repository.
+This runs typechecking, production builds, `pnpm pack:release`, and archive validation. It does **not** run unit/browser tests, publish anything or require npm credentials. `pnpm pack:all` remains an alias but also packs only this one public package.
 
-Tarballs are written to `artifacts/packages`. `release-manifest.json` records their exact filenames, versions, sizes and SHA-256 hashes. Archive validation checks public publishing metadata, ESM/type export targets, packaged source-map sources, notices, and resolved internal dependency versions. `pnpm pack` converts `workspace:^` to the matching publishable `^0.3.0` dependency ranges. Do not use `npm pack` directly against the workspace package directories: npm does not perform pnpm's workspace-protocol rewriting.
+The build copies internal JavaScript and declarations into the public package, rewrites their private workspace imports to relative paths, and includes source-map sources and third-party notices. External libraries such as Three.js and media encoders remain ordinary npm dependencies. The `/headless` entry does not import the editor or Three.js even though the single package installs their external dependencies.
 
-To revalidate existing archives use `pnpm release:validate`. Rebuild/repack after source or version edits; validation of existing archives alone does not establish source freshness. Old-version archives may remain in the directory; publish only the exact filenames from the latest release manifest.
+Output:
 
-## Inspect and try locally
-
-```sh
-npm publish artifacts/packages/mockup-studio-sdk-0.3.0.tgz --dry-run --access public
+```text
+artifacts/packages/bookklik-device-mockup-studio-0.3.0.tgz
+artifacts/packages/release-manifest.json
 ```
 
-Repeat the dry run for every tarball and inspect its file list. No package is published by `--dry-run`. In an empty consumer project, install **all seven tarballs in one command** so unpublished internal dependencies resolve locally:
+The manifest lists exactly one tarball with its name, version, size and SHA-256 hash. Validation checks private workspace flags, public ESM/type exports, included relative modules, external dependency declarations, source-map sources and notices. It rejects unresolved workspace imports and dependencies on the private workspace packages.
+
+Use `pnpm release:validate` to revalidate an existing archive. Rebuild/repack after source or version edits; archive validation alone does not establish source freshness. Old scope/version tarballs may remain in `artifacts/packages`; ignore those and publish **only the single filename from the latest release manifest**.
+
+## Inspect and install locally
 
 ```sh
-npm install /absolute/path/to/artifacts/packages/mockup-studio-core-0.3.0.tgz /absolute/path/to/artifacts/packages/mockup-studio-presets-0.3.0.tgz /absolute/path/to/artifacts/packages/mockup-studio-render-0.3.0.tgz /absolute/path/to/artifacts/packages/mockup-studio-spatial-0.3.0.tgz /absolute/path/to/artifacts/packages/mockup-studio-media-0.3.0.tgz /absolute/path/to/artifacts/packages/mockup-studio-editor-0.3.0.tgz /absolute/path/to/artifacts/packages/mockup-studio-sdk-0.3.0.tgz
+npm publish artifacts/packages/bookklik-device-mockup-studio-0.3.0.tgz --dry-run --access public
 ```
 
-Then verify your intended Node/browser integration and TypeScript module resolution. `@mockup-studio/sdk/headless` must import without a browser document and must not pull editor/Three.js code into the runtime import graph. It still belongs to the umbrella package, whose declared dependencies are installed; choose individual packages for minimal dependency installation. Node rendering needs an explicit canvas/encoder adapter. CommonJS `require` is not an advertised entry point.
-
-## Publish manually, in dependency order
-
-Log in yourself (`npm login`) and verify the account (`npm whoami`). Publish the prepared tarballs, not the private workspace root. With the initial version unchanged, run these commands one at a time and confirm success before proceeding:
+The dry run does not publish. In an empty consumer project, install just the one tarball:
 
 ```sh
-npm publish artifacts/packages/mockup-studio-core-0.3.0.tgz --access public
-npm publish artifacts/packages/mockup-studio-presets-0.3.0.tgz --access public
-npm publish artifacts/packages/mockup-studio-render-0.3.0.tgz --access public
-npm publish artifacts/packages/mockup-studio-spatial-0.3.0.tgz --access public
-npm publish artifacts/packages/mockup-studio-media-0.3.0.tgz --access public
-npm publish artifacts/packages/mockup-studio-editor-0.3.0.tgz --access public
-npm publish artifacts/packages/mockup-studio-sdk-0.3.0.tgz --access public
+npm install /absolute/path/to/artifacts/packages/bookklik-device-mockup-studio-0.3.0.tgz
 ```
 
-Wait for dependencies to become available on the registry before publishing their dependents. Complete npm's interactive authentication/2FA requirements yourself. Never put credentials in repository files. Published name/version pairs cannot be overwritten; if part of a release fails, inspect the registry before retrying and never blindly bump or republish successful packages. Use an appropriate prerelease version and `--tag next` instead if this is not a stable release.
+Verify your browser/Node integration and TypeScript module resolution. Public imports are:
 
-After publication, install the SDK by version from npm in a clean consumer project. No automatic npm publishing workflow is added by this change.
+```ts
+import { mountEditor } from '@bookklik/device-mockup-studio';
+import { createHeadlessStudio } from '@bookklik/device-mockup-studio/headless';
+import { createScene } from '@bookklik/device-mockup-studio/core';
+import { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { SpatialRenderer } from '@bookklik/device-mockup-studio/spatial';
+```
+
+The `/presets`, `/media` and `/editor` entries are available too. These are entry points within the same npm package, not separately published packages. ESM is the advertised module format. Node rendering needs a canvas/encoder adapter; SSR imports do not require a DOM.
+
+## Publish manually
+
+Log in yourself (`npm login`), verify the account (`npm whoami`), and publish the prepared tarball:
+
+```sh
+npm publish artifacts/packages/bookklik-device-mockup-studio-0.3.0.tgz --access public
+```
+
+Do not publish the private repository root or any supporting workspace, and do not publish old multi-package tarballs. No dependency-order release is necessary. Complete npm authentication/2FA yourself and never store credentials in repository files. Published name/version pairs cannot be overwritten; inspect the registry before retrying a failed publication. For a prerelease, use a matching prerelease version and `--tag next`.
+
+After publishing, verify a clean install with `npm install @bookklik/device-mockup-studio@0.3.0`. No automatic publishing workflow is added.

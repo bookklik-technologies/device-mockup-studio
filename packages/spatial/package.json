@@ -1,6 +1,7 @@
 {
-  "name": "@mockup-studio/spatial",
+  "name": "@bookklik/device-mockup-studio/spatial",
   "version": "0.3.0",
+  "private": true,
   "type": "module",
   "description": "Device Mockup Studio optional Three.js spatial renderer with physical materials",
   "license": "MIT",
@@ -15,10 +16,6 @@
   },
   "engines": {
     "node": ">=22"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   },
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -36,9 +33,9 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@mockup-studio/core": "workspace:^",
-    "@mockup-studio/presets": "workspace:^",
-    "@mockup-studio/render": "workspace:^",
+    "@bookklik/device-mockup-studio/core": "workspace:^",
+    "@bookklik/device-mockup-studio/presets": "workspace:^",
+    "@bookklik/device-mockup-studio/render": "workspace:^",
     "@types/three": "0.180.0",
     "@webgpu/types": "0.1.74",
     "three": "0.180.0"

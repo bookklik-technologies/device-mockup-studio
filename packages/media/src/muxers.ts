@@ -1,4 +1,4 @@
-import { StudioError } from '@mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio/core';
 import type { EncoderMuxerAdapter, VideoEncodingParameters, VideoMuxerAdapter } from './types.js';
 
 const PAGE_SIZE = 64 * 1024;

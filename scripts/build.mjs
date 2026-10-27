@@ -5,6 +5,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { embedDeviceArtwork } from './embed-device-artwork.mjs';
 import { bundleFonts } from './fonts.mjs';
+import { assemblePackage } from './assemble-package.mjs';
 const root = path.resolve(import.meta.dirname, '..');
 process.chdir(root);
 await embedDeviceArtwork();
@@ -23,6 +24,7 @@ for (const name of ['core','presets','render','spatial','media','editor','sdk'])
   }
   await cp('docs/THIRD-PARTY.md', `${dir}/dist/THIRD-PARTY.md`);
 }
+await assemblePackage(root);
 await mkdir('apps/demo/dist', {recursive:true});
 await cp('icon.svg', 'apps/demo/dist/icon.svg');
 await bundleFonts();
@@ -36,4 +38,4 @@ await cp('packages/media/node_modules/gifenc/LICENSE.md', 'artifacts/licenses/gi
 await cp('node_modules/@fontsource-variable/outfit/LICENSE', 'artifacts/licenses/Outfit-OFL.txt');
 await build({entryPoints:['packages/sdk/src/index.ts'],bundle:true,format:'esm',outfile:'artifacts/mockup-studio.js',sourcemap:true,target:'es2022',tsconfig:'tsconfig.json'});
 await build({entryPoints:['packages/sdk/src/headless.ts'],bundle:true,format:'esm',outfile:'artifacts/mockup-studio-headless.js',sourcemap:true,target:'es2022',tsconfig:'tsconfig.json'});
-console.log('Built seven ESM packages, full and headless SDK bundles, and runnable demo.');
+console.log('Built one publishable SDK with all subpath modules, full and headless browser bundles, and runnable demo.');

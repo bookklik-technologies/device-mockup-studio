@@ -1,6 +1,7 @@
 {
-  "name": "@mockup-studio/core",
+  "name": "@bookklik/device-mockup-studio/core",
   "version": "0.3.0",
+  "private": true,
   "type": "module",
   "description": "Device Mockup Studio TypeScript core",
   "license": "MIT",
@@ -15,10 +16,6 @@
   },
   "engines": {
     "node": ">=22"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   },
   "sideEffects": false,
   "main": "./dist/index.js",

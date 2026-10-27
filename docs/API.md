@@ -2,11 +2,11 @@
 
 See [SPATIAL.md](SPATIAL.md) for the optional 3D renderer, physical materials and editor rendererFactory. All v0.1 APIs below remain available.
 
-Public types are in packages/core/src/types.ts and each package's emitted declarations. All packages use ESM. There are no module-level DOM accesses.
+Public types are in packages/core/src/types.ts and the emitted declarations bundled in the single `@bookklik/device-mockup-studio` package. Its module subpaths use ESM and do not access the DOM at import time.
 
 ## Headless SDK
 
-Import `createHeadlessStudio` from `@mockup-studio/sdk/headless` for a UI-free integration. This entry re-exports core, presets, render and media, without importing the editor or Three.js. The full SDK also exports the factory.
+Import `createHeadlessStudio` from `@bookklik/device-mockup-studio/headless` for a UI-free integration. This entry re-exports core, presets, render and media, without importing the editor or Three.js. The full SDK also exports the factory.
 
 - Options: `scene`, `canvas`, `canvasFactory`, `assets`, `deviceAssets`, `encodeCanvas`, `onChange`, and optional `rendererFactory(canvas, options)`.
 - Exposes `store`, `renderer`, `canvas` and a copied `scene` snapshot.
@@ -27,7 +27,7 @@ See [HEADLESS.md](HEADLESS.md) for complete browser and Node examples, asset loa
 - Mockup nodes reference assets by ID. Device IDs resolve through the presets registry. Shape types are rectangle/ellipse/ring; text is wrapped within its local box.
 
 ```ts
-import { createScene, createMockup, SceneStore } from '@mockup-studio/core';
+import { createScene, createMockup, SceneStore } from '@bookklik/device-mockup-studio/core';
 const node = createMockup({ deviceId: 'phone', x: 540, y: 540, width: 320, height: 650 });
 const store = new SceneStore(createScene({ width: 1080, height: 1080, nodes: [node] }));
 store.update(draft => { draft.nodes[0].rotation = -8; });
@@ -61,7 +61,7 @@ The 17 definitions include seven primary families plus orientation variants. Ins
 The optional asset ID takes priority over media from existing mockups and other assets. Media cycles across available template slots. Playback settings come from the first existing mockup referencing each video, keeping repeated video instances synchronized. Without media, original embedded SVG sample assets are included. Unknown IDs throw `UNKNOWN_TEMPLATE`. The 3D templates require `SpatialRenderer`.
 
 ```ts
-import { getTemplates, applyTemplate, fontFamilies } from '@mockup-studio/sdk';
+import { getTemplates, applyTemplate, fontFamilies } from '@bookklik/device-mockup-studio';
 const templates = getTemplates({ workspace: '2d' });
 editor.setScene(applyTemplate(editor.getScene(), templates[0]!.id, { assetId: 'design' }));
 // fontFamilies describes the twelve demo fonts: id, family, category, weights.
@@ -72,7 +72,7 @@ The demo bundles `fonts/fonts.css`, WOFF2 files, and individual licenses. Hosts 
 ## Renderer and assets
 
 ```ts
-import { CanvasRenderer, AssetManager, createMagicBackground } from '@mockup-studio/render';
+import { CanvasRenderer, AssetManager, createMagicBackground } from '@bookklik/device-mockup-studio/render';
 const assets = new AssetManager();
 const renderer = new CanvasRenderer(canvas, { assets });
 const asset = await assets.importFile(file); // data URL, metadata and loaded handle

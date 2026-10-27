@@ -2,7 +2,7 @@ import {
   createMaterialPreset, createMesh, createMockup, createShape, createSpatialSettings, createText, uid,
   type MaterialPreset, type MeshGeometry, type MeshNode, type MockupNode, type PhysicalMaterial,
   type SceneDocument, type ShapeNode, type SpatialSettings, type TextNode,
-} from '@mockup-studio/core';
+} from '@bookklik/device-mockup-studio/core';
 import { getDevice } from './devices.js';
 
 export interface TemplateDesign { description: string; build(context: TemplateContext): void }

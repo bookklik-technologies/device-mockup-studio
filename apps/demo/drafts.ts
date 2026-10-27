@@ -1,4 +1,4 @@
-import { deserializeScene, serializeScene, type SceneDocument } from '@mockup-studio/sdk';
+import { deserializeScene, serializeScene, type SceneDocument } from '@bookklik/device-mockup-studio';
 
 export interface DraftStorage {
   read(mode: '2d' | '3d'): Promise<SceneDocument | undefined>;

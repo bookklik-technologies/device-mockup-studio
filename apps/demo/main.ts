@@ -1,4 +1,4 @@
-import { mountEditor, createScene, createMockup, createText, createMesh, createShape, createMaterialPreset, createSpatialSettings, SpatialRenderer, type SceneDocument, type EditorHandle } from '@mockup-studio/sdk';
+import { mountEditor, createScene, createMockup, createText, createMesh, createShape, createMaterialPreset, createSpatialSettings, SpatialRenderer, type SceneDocument, type EditorHandle } from '@bookklik/device-mockup-studio';
 import { openDraftStorage } from './drafts.js';
 
 /** Original demo artwork, embedded and portable. No network image or font dependency. */

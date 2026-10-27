@@ -4,17 +4,17 @@ Headless means a UI-free SDK, not an iframe or a hidden instance of the editor. 
 
 ## Entry points
 
-- `@mockup-studio/sdk`: complete SDK including editor and optional spatial exports.
-- `@mockup-studio/sdk/headless`: core, presets, Canvas2D rendering, media and `createHeadlessStudio`; no editor or Three.js imports.
-- `@mockup-studio/core`: DOM-free state/validation/serialization only, no canvas required.
-- Individual render/media packages: build your own lower-level integration without installing the umbrella SDK's editor/spatial dependencies.
+- `@bookklik/device-mockup-studio`: complete SDK including editor and optional spatial exports.
+- `@bookklik/device-mockup-studio/headless`: core, presets, Canvas2D rendering, media and `createHeadlessStudio`; no editor or Three.js imports.
+- `@bookklik/device-mockup-studio/core`: DOM-free state/validation/serialization only, no canvas required.
+- `@bookklik/device-mockup-studio/render` and `/media`: lower-level APIs from the same installed package. These subpath imports avoid loading unrelated module graphs; all external dependencies are still installed with the single package.
 
 The build also writes standalone browser ESM bundles to `artifacts/mockup-studio.js` and `artifacts/mockup-studio-headless.js`. They are build artifacts, not npm export paths. Host them yourself and preserve dependency license notices.
 
 ## Browser or framework component
 
 ```ts
-import { createHeadlessStudio, createScene, createMockup } from '@mockup-studio/sdk/headless';
+import { createHeadlessStudio, createScene, createMockup } from '@bookklik/device-mockup-studio/headless';
 
 const studio = createHeadlessStudio({
   canvas: document.querySelector<HTMLCanvasElement>('#preview')!,
@@ -51,7 +51,7 @@ Define image/video entries in `scene.assets` and reference their IDs from nodes.
 The import itself does not read `window` or `document`. Node must provide a compatible Canvas2D implementation and encoder, for example optional host dependency `@napi-rs/canvas`:
 
 ```sh
-npm install @mockup-studio/sdk @napi-rs/canvas
+npm install @bookklik/device-mockup-studio @napi-rs/canvas
 ```
 
 See [`examples/headless-node.mjs`](../examples/headless-node.mjs) for a complete scene-to-PNG example. After a workspace build, run:
@@ -60,7 +60,7 @@ See [`examples/headless-node.mjs`](../examples/headless-node.mjs) for a complete
 node examples/headless-node.mjs artifacts/headless.png
 ```
 
-In a consuming project replace its relative SDK import with `@mockup-studio/sdk/headless`. The example's `canvasFactory` creates both output and intermediate canvases, and `encodeCanvas` returns correctly typed PNG/JPEG/WebP Blobs. In TypeScript, native canvas interfaces may require explicit `unknown` casts to the SDK's DOM-shaped canvas types; the runtime does not require a DOM.
+In a consuming project replace its relative SDK import with `@bookklik/device-mockup-studio/headless`. This is a subpath of the one published package, not a separate install. The example's `canvasFactory` creates both output and intermediate canvases, and `encodeCanvas` returns correctly typed PNG/JPEG/WebP Blobs. In TypeScript, native canvas interfaces may require explicit `unknown` casts to the SDK's DOM-shaped canvas types; the runtime does not require a DOM.
 
 Node does not automatically decode scene assets or device-frame data URLs. Decode images yourself (for example with `loadImage`) and register them in an injected AssetManager. For photographic frames, register decoded frame images by device ID in `deviceAssets`. Register fonts using your canvas implementation. Video decoding, browser fonts, WebCodecs and WebGL2 are not supplied by this adapter.
 
@@ -69,8 +69,8 @@ For browser-identical rendering, [`examples/headless.mjs`](../examples/headless.
 ## Optional 3D
 
 ```ts
-import { createHeadlessStudio } from '@mockup-studio/sdk/headless';
-import { SpatialRenderer } from '@mockup-studio/spatial';
+import { createHeadlessStudio } from '@bookklik/device-mockup-studio/headless';
+import { SpatialRenderer } from '@bookklik/device-mockup-studio/spatial';
 
 const studio = createHeadlessStudio({
   canvas: document.querySelector<HTMLCanvasElement>('#preview')!,

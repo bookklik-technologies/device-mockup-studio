@@ -1,6 +1,6 @@
 # Browser media/export package (v0.1)
 
-`@mockup-studio/media` is browser-first, strict TypeScript, safe to import from Node, and does not inspect/create browser globals at import time. It exports real image encodes, looping animated GIFs, pull-driven image sequences and offline WebCodecs video. **All video exports are silent. There is no audio track, audio mixing, audio passthrough, MediaRecorder export or real-time recording fallback in v0.1.** A video asset's visual frames are sought by the renderer; its audio is not exported.
+`@bookklik/device-mockup-studio/media` is browser-first, strict TypeScript, safe to import from Node, and does not inspect/create browser globals at import time. It exports real image encodes, looping animated GIFs, pull-driven image sequences and offline WebCodecs video. **All video exports are silent. There is no audio track, audio mixing, audio passthrough, MediaRecorder export or real-time recording fallback in v0.1.** A video asset's visual frames are sought by the renderer; its audio is not exported.
 
 ## Main API
 
@@ -8,7 +8,7 @@
 import {
   exportGIF, exportImage, exportFrames, exportVideo, getCapabilities,
   probeCapabilities, downloadBlob,
-} from '@mockup-studio/media';
+} from '@bookklik/device-mockup-studio/media';
 
 const controller = new AbortController();
 const png = await exportImage(renderer, scene, {

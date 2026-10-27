@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createScene, createMockup, createAnimationTracks, evaluateScene } from '@mockup-studio/core';
+import { createScene, createMockup, createAnimationTracks, evaluateScene } from '@bookklik/device-mockup-studio/core';
 import { clientToScene, nodeCorners, hitTest, editNode } from '../packages/editor/src/helpers.js';
 
 test('editor coordinates account for CSS fitting, offset and center-based nodes', () => {
@@ -39,7 +39,7 @@ test('editor can be imported without a window or document', async () => {
 });
 
 test('spatial picking uses orthographic depth hulls without changing legacy projection', async () => {
-  const { createMesh } = await import('@mockup-studio/core');
+  const { createMesh } = await import('@bookklik/device-mockup-studio/core');
   const node = createMesh({ x: 200, y: 150, width: 100, height: 80, depth: 200, tiltY: 45 });
   const hull = nodeCorners(node);
   assert.ok(hull.length >= 4 && hull.length <= 6);

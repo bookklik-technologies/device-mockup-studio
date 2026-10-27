@@ -1,4 +1,4 @@
-import type { SceneDocument, SceneNode } from '@mockup-studio/core';
+import type { SceneDocument, SceneNode } from '@bookklik/device-mockup-studio/core';
 import { nodeCorners, type Point } from './helpers.js';
 
 export interface Bounds { left: number; right: number; top: number; bottom: number }

@@ -1,4 +1,4 @@
-import { StudioError, type SceneDocument } from '@mockup-studio/core';
+import { StudioError, type SceneDocument } from '@bookklik/device-mockup-studio/core';
 import type { EncoderMuxerAdapter, ExportRenderer, VideoEncodingParameters, VideoExportOptions, VideoMuxerAdapter } from './types.js';
 import { MEDIA_LIMITS, abortError, abortable, acquireRenderer, checkAbort, numberInRange, progress, snapshot, timeline, verifyDimensions, yieldTask } from './common.js';
 import { createMP4Adapter, createWebMAdapter } from './muxers.js';

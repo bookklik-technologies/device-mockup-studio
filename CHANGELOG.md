@@ -2,10 +2,11 @@
 
 ## 0.3.0 — 2026-10-27
 
-- Add `@mockup-studio/sdk/headless` and `createHeadlessStudio` for custom UI integrations, with scene history, explicit rendering, serialized image export, JSON persistence hooks and resource cleanup.
+- Consolidate publication into `@bookklik/device-mockup-studio`, with headless and module subpath exports; keep supporting workspaces private.
+- Add `@bookklik/device-mockup-studio/headless` and `createHeadlessStudio` for custom UI integrations, with scene history, explicit rendering, serialized image export, JSON persistence hooks and resource cleanup.
 - Add standalone headless ESM output and a native Node canvas example; make the optional Chromium example portable to Windows/macOS.
-- Prepare seven public npm packages with Node engine metadata, packaged notices, cross-platform packing, archive validation and a hash manifest. Preserve authored package documentation and licenses during builds.
-- Document manual dependency-ordered publication. Release preparation does not publish packages or run tests.
+- Prepare one public npm package with Node engine metadata, included internal modules, declarations, packaged notices, cross-platform packing, archive validation and a hash manifest. Preserve authored package documentation and licenses during builds.
+- Document manual single-tarball publication. Release preparation does not publish packages or run tests.
 - Refine mobile canvas sizing, light-theme actions, media thumbnails and browser theme colors; restore the project-name control.
 - Fix gifenc Node ESM interoperability and update artwork/browser regression coverage.
 

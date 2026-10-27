@@ -1,4 +1,4 @@
-import type { DeviceDefinition } from '@mockup-studio/core';
+import type { DeviceDefinition } from '@bookklik/device-mockup-studio/core';
 import { element } from './dom.js';
 import { icon } from './icons.js';
 

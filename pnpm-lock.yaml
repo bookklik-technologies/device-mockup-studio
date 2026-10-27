@@ -73,16 +73,16 @@ importers:
 
   packages/editor:
     dependencies:
-      '@mockup-studio/core':
+      '@bookklik/device-mockup-studio/core':
         specifier: workspace:^
         version: link:../core
-      '@mockup-studio/media':
+      '@bookklik/device-mockup-studio/media':
         specifier: workspace:^
         version: link:../media
-      '@mockup-studio/presets':
+      '@bookklik/device-mockup-studio/presets':
         specifier: workspace:^
         version: link:../presets
-      '@mockup-studio/render':
+      '@bookklik/device-mockup-studio/render':
         specifier: workspace:^
         version: link:../render
       lucide:
@@ -91,10 +91,10 @@ importers:
 
   packages/media:
     dependencies:
-      '@mockup-studio/core':
+      '@bookklik/device-mockup-studio/core':
         specifier: workspace:^
         version: link:../core
-      '@mockup-studio/render':
+      '@bookklik/device-mockup-studio/render':
         specifier: workspace:^
         version: link:../render
       gifenc:
@@ -109,49 +109,52 @@ importers:
 
   packages/presets:
     dependencies:
-      '@mockup-studio/core':
+      '@bookklik/device-mockup-studio/core':
         specifier: workspace:^
         version: link:../core
 
   packages/render:
     dependencies:
-      '@mockup-studio/core':
+      '@bookklik/device-mockup-studio/core':
         specifier: workspace:^
         version: link:../core
-      '@mockup-studio/presets':
+      '@bookklik/device-mockup-studio/presets':
         specifier: workspace:^
         version: link:../presets
 
   packages/sdk:
     dependencies:
-      '@mockup-studio/core':
-        specifier: workspace:^
-        version: link:../core
-      '@mockup-studio/editor':
-        specifier: workspace:^
-        version: link:../editor
-      '@mockup-studio/media':
-        specifier: workspace:^
-        version: link:../media
-      '@mockup-studio/presets':
-        specifier: workspace:^
-        version: link:../presets
-      '@mockup-studio/render':
-        specifier: workspace:^
-        version: link:../render
-      '@mockup-studio/spatial':
-        specifier: workspace:^
-        version: link:../spatial
+      '@types/three':
+        specifier: 0.180.0
+        version: 0.180.0
+      '@webgpu/types':
+        specifier: 0.1.74
+        version: 0.1.74
+      gifenc:
+        specifier: 1.0.3
+        version: 1.0.3
+      lucide:
+        specifier: ^1.61.0
+        version: 1.61.0
+      mp4-muxer:
+        specifier: 5.2.2
+        version: 5.2.2
+      three:
+        specifier: 0.180.0
+        version: 0.180.0
+      webm-muxer:
+        specifier: 5.1.4
+        version: 5.1.4
 
   packages/spatial:
     dependencies:
-      '@mockup-studio/core':
+      '@bookklik/device-mockup-studio/core':
         specifier: workspace:^
         version: link:../core
-      '@mockup-studio/presets':
+      '@bookklik/device-mockup-studio/presets':
         specifier: workspace:^
         version: link:../presets
-      '@mockup-studio/render':
+      '@bookklik/device-mockup-studio/render':
         specifier: workspace:^
         version: link:../render
       '@types/three':

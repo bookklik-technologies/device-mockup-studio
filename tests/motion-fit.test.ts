@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createCanvas } from '@napi-rs/canvas';
-import { animationPresets, assertScene, computeFit, createAnimationTracks, createMesh, createMockup, createScene, createShape, createText, deserializeScene, evaluateScene, SceneStore, serializeScene, type AnimationPreset, type Fit } from '@mockup-studio/core';
-import { AssetManager, CanvasRenderer } from '@mockup-studio/render';
+import { animationPresets, assertScene, computeFit, createAnimationTracks, createMesh, createMockup, createScene, createShape, createText, deserializeScene, evaluateScene, SceneStore, serializeScene, type AnimationPreset, type Fit } from '@bookklik/device-mockup-studio/core';
+import { AssetManager, CanvasRenderer } from '@bookklik/device-mockup-studio/render';
 
 test('all 16 motion presets support every layer type, bounded extremes and short timelines', () => {
   assert.equal(animationPresets.length, 16); assert.equal(new Set(animationPresets).size, 16);

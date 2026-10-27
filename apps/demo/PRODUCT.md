@@ -21,7 +21,7 @@ Fully client-side editing *and* export — including animated GIF and WebM/MP4 v
 ## Operating Context
 
 - Runs as a static web app on GitHub Pages (https://bookklik-technologies.github.io/device-mockup-studio/); the same build works on the local dev server (http://127.0.0.1:4173 via `pnpm dev`).
-- Monorepo of seven packages (`@mockup-studio/core`, `presets`, `render`, `spatial`, `media`, `editor`, `sdk`) under `packages/`; the demo app in `apps/demo` is the user-facing editor surface.
+- Monorepo with private implementation workspaces under `packages/`, assembled into one published package, `@bookklik/device-mockup-studio`, with module subpath entries; the demo app in `apps/demo` is the user-facing editor surface.
 - Projects save as portable JSON files with embedded media; separate local 2D/3D browser drafts.
 
 ## Capabilities and Constraints
@@ -38,7 +38,7 @@ Confirmed functionality:
 Durable constraints (confirmed binding):
 - Client-side only: no server, no upload; all processing and export happen in the browser.
 - MIT license.
-- SDK packages are workspace-only: not published to npm; distributed as `.tgz` tarballs via `pnpm pack:all` (install all seven together).
+- Release preparation produces one `bookklik-device-mockup-studio-0.3.0.tgz` tarball via `pnpm release:prepare`; publication to npm is manual. All supporting workspaces remain private.
 - Video export depends on browser codec support.
 - Remote HTTP(S) assets require anonymous CORS permission from their server.
 - Requires Node.js 22+ and pnpm 10 (pinned in root `package.json`) for development.

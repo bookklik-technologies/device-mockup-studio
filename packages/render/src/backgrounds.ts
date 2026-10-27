@@ -1,4 +1,4 @@
-import { StudioError, type Background } from '@mockup-studio/core';
+import { StudioError, type Background } from '@bookklik/device-mockup-studio/core';
 import { context, defaultCanvasFactory, type CanvasFactory } from './canvas.js';
 import { sourceSize } from './assets.js';
 

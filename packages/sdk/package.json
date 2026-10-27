@@ -1,8 +1,8 @@
 {
-  "name": "@mockup-studio/sdk",
+  "name": "@bookklik/device-mockup-studio",
   "version": "0.3.0",
   "type": "module",
-  "description": "Device Mockup Studio TypeScript sdk",
+  "description": "Device mockup composition, headless rendering, media export and embeddable editor",
   "license": "MIT",
   "homepage": "https://bookklik-technologies.github.io/device-mockup-studio/",
   "repository": {
@@ -31,20 +31,44 @@
     "./headless": {
       "types": "./dist/headless.d.ts",
       "import": "./dist/headless.js"
+    },
+    "./core": {
+      "types": "./dist/core/index.d.ts",
+      "import": "./dist/core/index.js"
+    },
+    "./presets": {
+      "types": "./dist/presets/index.d.ts",
+      "import": "./dist/presets/index.js"
+    },
+    "./render": {
+      "types": "./dist/render/index.d.ts",
+      "import": "./dist/render/index.js"
+    },
+    "./media": {
+      "types": "./dist/media/index.d.ts",
+      "import": "./dist/media/index.js"
+    },
+    "./editor": {
+      "types": "./dist/editor/index.d.ts",
+      "import": "./dist/editor/index.js"
+    },
+    "./spatial": {
+      "types": "./dist/spatial/index.d.ts",
+      "import": "./dist/spatial/index.js"
     }
   },
   "files": [
     "dist",
-    "src",
     "README.md",
     "LICENSE"
   ],
   "dependencies": {
-    "@mockup-studio/core": "workspace:^",
-    "@mockup-studio/render": "workspace:^",
-    "@mockup-studio/presets": "workspace:^",
-    "@mockup-studio/media": "workspace:^",
-    "@mockup-studio/editor": "workspace:^",
-    "@mockup-studio/spatial": "workspace:^"
+    "@types/three": "0.180.0",
+    "@webgpu/types": "0.1.74",
+    "gifenc": "1.0.3",
+    "lucide": "^1.61.0",
+    "mp4-muxer": "5.2.2",
+    "three": "0.180.0",
+    "webm-muxer": "5.1.4"
   }
 }

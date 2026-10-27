@@ -1,6 +1,7 @@
 {
-  "name": "@mockup-studio/presets",
+  "name": "@bookklik/device-mockup-studio/presets",
   "version": "0.3.0",
+  "private": true,
   "type": "module",
   "description": "Device Mockup Studio TypeScript presets",
   "license": "MIT",
@@ -15,10 +16,6 @@
   },
   "engines": {
     "node": ">=22"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   },
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -36,6 +33,6 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@mockup-studio/core": "workspace:^"
+    "@bookklik/device-mockup-studio/core": "workspace:^"
   }
 }

@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assertScene, createAnimationTracks, createMockup, createScene, createShape, createText, evaluateScene, serializeScene, StudioError } from '@mockup-studio/core';
-import type { DeviceDefinition, SceneDocument } from '@mockup-studio/core';
-import { applyPreset, framePresets, getDevice, getPresets, listDevices, registerDevice } from '@mockup-studio/presets';
+import { assertScene, createAnimationTracks, createMockup, createScene, createShape, createText, evaluateScene, serializeScene, StudioError } from '@bookklik/device-mockup-studio/core';
+import type { DeviceDefinition, SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { applyPreset, framePresets, getDevice, getPresets, listDevices, registerDevice } from '@bookklik/device-mockup-studio/presets';
 
 function scene(): SceneDocument {
   const node = createMockup({ id: 'hero', assetId: 'media', deviceId: 'phone' });

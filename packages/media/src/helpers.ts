@@ -1,4 +1,4 @@
-import { StudioError, serializeScene, type SceneDocument } from '@mockup-studio/core';
+import { StudioError, serializeScene, type SceneDocument } from '@bookklik/device-mockup-studio/core';
 import type { ShareProvider } from './types.js';
 import { abortable, checkAbort, numberInRange, snapshot } from './common.js';
 

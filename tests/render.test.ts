@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createCanvas, type Canvas } from '@napi-rs/canvas';
-import { createScene, createMockup, createShape, createText, evaluateScene, computeFit, StudioError, type Asset, type Background, type MockupStyle, type SceneDocument } from '@mockup-studio/core';
-import { registerDevice } from '@mockup-studio/presets';
-import { AssetManager, CanvasRenderer } from '@mockup-studio/render';
+import { createScene, createMockup, createShape, createText, evaluateScene, computeFit, StudioError, type Asset, type Background, type MockupStyle, type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { registerDevice } from '@bookklik/device-mockup-studio/presets';
+import { AssetManager, CanvasRenderer } from '@bookklik/device-mockup-studio/render';
 import { fitted, MAX_OUTPUT_SIDE, MAX_OUTPUT_PIXELS } from '../packages/render/src/canvas.js';
 
 // Explicit DOM compatibility casts: napi's Canvas is a CanvasImageSource at runtime,

@@ -1,4 +1,4 @@
-import { createScene, createMockup, CanvasRenderer, exportImage, createAnimationTracks, exportVideo, mountEditor } from '@mockup-studio/sdk';
+import { createScene, createMockup, CanvasRenderer, exportImage, createAnimationTracks, exportVideo, mountEditor } from '@bookklik/device-mockup-studio';
 
 export async function generate(imageURL: string, width: number, height: number) {
   const media = { id: 'design', kind: 'image' as const, src: imageURL, width, height };

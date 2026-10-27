@@ -1,7 +1,7 @@
 /**
  * Adversarial regression tests.
  *
- * These tests probe correctness properties of @mockup-studio/core, presets and render
+ * These tests probe correctness properties of @bookklik/device-mockup-studio/core, presets and render
  * from the perspective of hostile/untrusted scene documents, bounds abuse, history
  * integrity, animation edge cases and deterministic raster output.
  *
@@ -19,9 +19,9 @@ import {
   assertScene, createAnimationTracks, createMockup, createScene, createShape, createText,
   deserializeScene, ease, evaluateScene, SceneStore, StudioError, validateScene,
   type Asset, type MockupNode, type SceneDocument, type TextNode,
-} from '@mockup-studio/core';
-import { applyPreset, getDevice, getPresets, listDevices, registerDevice } from '@mockup-studio/presets';
-import { AssetManager, CanvasRenderer } from '@mockup-studio/render';
+} from '@bookklik/device-mockup-studio/core';
+import { applyPreset, getDevice, getPresets, listDevices, registerDevice } from '@bookklik/device-mockup-studio/presets';
+import { AssetManager, CanvasRenderer } from '@bookklik/device-mockup-studio/render';
 
 const asCanvas = (canvas: Canvas) => canvas as unknown as HTMLCanvasElement;
 const asSource = (canvas: Canvas) => canvas as unknown as CanvasImageSource;

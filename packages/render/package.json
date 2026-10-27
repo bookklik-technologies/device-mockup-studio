@@ -1,6 +1,7 @@
 {
-  "name": "@mockup-studio/render",
+  "name": "@bookklik/device-mockup-studio/render",
   "version": "0.3.0",
+  "private": true,
   "type": "module",
   "description": "Device Mockup Studio TypeScript render",
   "license": "MIT",
@@ -15,10 +16,6 @@
   },
   "engines": {
     "node": ">=22"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
   },
   "sideEffects": false,
   "main": "./dist/index.js",
@@ -36,7 +33,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@mockup-studio/core": "workspace:^",
-    "@mockup-studio/presets": "workspace:^"
+    "@bookklik/device-mockup-studio/core": "workspace:^",
+    "@bookklik/device-mockup-studio/presets": "workspace:^"
   }
 }

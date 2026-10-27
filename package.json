@@ -1,5 +1,5 @@
 {
-  "name": "device-mockup-studio",
+  "name": "@bookklik/device-mockup-studio",
   "version": "0.3.0",
   "private": true,
   "license": "MIT",
@@ -22,7 +22,8 @@
     "test": "tsx --test tests/*.test.ts",
     "dev": "node scripts/dev.mjs",
     "pack:all": "node scripts/pack.mjs",
-    "release:prepare": "pnpm typecheck && pnpm build && pnpm pack:all && pnpm release:validate",
+    "pack:release": "node scripts/pack.mjs",
+    "release:prepare": "pnpm typecheck && pnpm build && pnpm pack:release && pnpm release:validate",
     "release:validate": "node scripts/validate-packages.mjs",
     "check": "pnpm typecheck && pnpm test && pnpm build",
     "test:browser": "node scripts/browser-tests.mjs",
