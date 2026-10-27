@@ -1,4 +1,4 @@
-# Features and limitations — v0.3.1
+# Features and limitations — v0.3.2
 
 Supported functionality and current limits of Device Mockup Studio. See [device artwork](DEVICE-ARTWORK.md) for the current device catalog.
 

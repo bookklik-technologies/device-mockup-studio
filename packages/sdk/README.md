@@ -8,7 +8,7 @@ Framework-independent device mockup composition, rendering, media export and an 
 npm install @bookklik/device-mockup-studio
 ```
 
-Before publication install the single `bookklik-device-mockup-studio-0.3.1.tgz` archive instead. No other `@bookklik` package is required. See the [publishing guide](https://github.com/bookklik-technologies/device-mockup-studio/blob/main/docs/PUBLISHING.md).
+Before publication install the single `bookklik-device-mockup-studio-0.3.2.tgz` archive instead. No other `@bookklik` package is required. See the [publishing guide](https://github.com/bookklik-technologies/device-mockup-studio/blob/main/docs/PUBLISHING.md).
 
 ## Headless embed: your canvas and UI
 

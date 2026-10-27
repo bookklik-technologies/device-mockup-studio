@@ -1,8 +1,13 @@
 # Changelog
 
+## 0.3.2 — 2026-10-27
+
+- Deploy the VitePress documentation site to GitHub Pages at `/docs/` alongside the live demo at the repository root, with the site base configured for the repository subpath.
+
 ## 0.3.1 — 2026-10-27
 
-- Release metadata patch bump; no functional changes.
+- Add a VitePress documentation site under `docs/` with guide, API and publishing pages.
+- Give the internal workspace packages valid single-slash npm names (`@bookklik/device-mockup-studio-<module>`) so `pnpm install` passes in CI, and regenerate the lockfile.
 
 ## 0.3.0 — 2026-10-27
 

@@ -1,11 +1,11 @@
 import { defineConfig } from 'vitepress'
 
-// For GitHub Pages deployment under a repository subpath, uncomment and adjust:
-// base: '/device-mockup-studio-docs/',
-
+// Deployed to GitHub Pages under the repository subpath:
+// https://bookklik-technologies.github.io/device-mockup-studio/docs/
 export default defineConfig({
+  base: '/device-mockup-studio/docs/',
   lang: 'en-US',
-  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/icon.svg' }]],
+  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/device-mockup-studio/docs/icon.svg' }]],
   title: 'Device Mockup Studio',
   titleTemplate: '%s | Device Mockup Studio',
   description:

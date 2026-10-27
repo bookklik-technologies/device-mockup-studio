@@ -1,12 +1,12 @@
 # Manual npm publishing
 
-Publish exactly one package: **`@bookklik/device-mockup-studio`**, currently version **0.3.1**. The repository root and six supporting workspace packages are private. The public package is assembled in `packages/sdk` and contains all internal modules; it has no dependency on another `@bookklik` package.
+Publish exactly one package: **`@bookklik/device-mockup-studio`**, currently version **0.3.2**. The repository root and six supporting workspace packages are private. The public package is assembled in `packages/sdk` and contains all internal modules; it has no dependency on another `@bookklik` package.
 
 ## Prerequisites
 
 - Node.js 22+ and the pinned package manager (`pnpm@10.34.7`).
 - An npm account authorized to publish `@bookklik/device-mockup-studio` in the `@bookklik` organization. Package metadata does not grant permission or reserve the name.
-- Confirm version 0.3.1 is unused on npm. For subsequent releases keep root/workspace versions synchronized and regenerate the lockfile if dependencies change.
+- Confirm version 0.3.2 is unused on npm. For subsequent releases keep root/workspace versions synchronized and regenerate the lockfile if dependencies change.
 - Review the changelog, licenses, device artwork notices and compatibility limits in the root README.
 
 ## Prepare without publishing
@@ -23,7 +23,7 @@ The build copies internal JavaScript and declarations into the public package, r
 Output:
 
 ```text
-artifacts/packages/bookklik-device-mockup-studio-0.3.1.tgz
+artifacts/packages/bookklik-device-mockup-studio-0.3.2.tgz
 artifacts/packages/release-manifest.json
 ```
 
@@ -34,13 +34,13 @@ Use `pnpm release:validate` to revalidate an existing archive. Rebuild/repack af
 ## Inspect and install locally
 
 ```sh
-npm publish artifacts/packages/bookklik-device-mockup-studio-0.3.1.tgz --dry-run --access public
+npm publish artifacts/packages/bookklik-device-mockup-studio-0.3.2.tgz --dry-run --access public
 ```
 
 The dry run does not publish. In an empty consumer project, install just the one tarball:
 
 ```sh
-npm install /absolute/path/to/artifacts/packages/bookklik-device-mockup-studio-0.3.1.tgz
+npm install /absolute/path/to/artifacts/packages/bookklik-device-mockup-studio-0.3.2.tgz
 ```
 
 Verify your browser/Node integration and TypeScript module resolution. Public imports are:
@@ -60,9 +60,9 @@ The `/presets`, `/media` and `/editor` entries are available too. These are entr
 Log in yourself (`npm login`), verify the account (`npm whoami`), and publish the prepared tarball:
 
 ```sh
-npm publish artifacts/packages/bookklik-device-mockup-studio-0.3.1.tgz --access public
+npm publish artifacts/packages/bookklik-device-mockup-studio-0.3.2.tgz --access public
 ```
 
 Do not publish the private repository root or any supporting workspace, and do not publish old multi-package tarballs. No dependency-order release is necessary. Complete npm authentication/2FA yourself and never store credentials in repository files. Published name/version pairs cannot be overwritten; inspect the registry before retrying a failed publication. For a prerelease, use a matching prerelease version and `--tag next`.
 
-After publishing, verify a clean install with `npm install @bookklik/device-mockup-studio@0.3.1`. No automatic publishing workflow is added.
+After publishing, verify a clean install with `npm install @bookklik/device-mockup-studio@0.3.2`. No automatic publishing workflow is added.

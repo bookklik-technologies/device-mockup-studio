@@ -1,8 +1,8 @@
 {
   "name": "@bookklik/device-mockup-studio",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "type": "module",
-  "description": "Device mockup composition, headless rendering, media export and embeddable editor",
+  "description": "Compose animated device mockups and export them as PNG, GIF, or video. Framework-independent TypeScript toolkit with modular ESM subpath imports, an optional embeddable editor, and a UI-free headless SDK.",
   "license": "MIT",
   "homepage": "https://bookklik-technologies.github.io/device-mockup-studio/",
   "repository": {

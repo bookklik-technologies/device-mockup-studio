@@ -1,7 +1,8 @@
 {
   "name": "@bookklik/device-mockup-studio",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": false,
+  "description": "Monorepo for @bookklik/device-mockup-studio: device mockup composition, Canvas2D/WebGL2 rendering, media export, and an embeddable editor.",
   "license": "MIT",
   "homepage": "https://bookklik-technologies.github.io/device-mockup-studio/",
   "repository": {
