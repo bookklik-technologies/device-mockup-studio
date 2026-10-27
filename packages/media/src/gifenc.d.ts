@@ -12,4 +12,11 @@ declare module 'gifenc' {
     bytesView(): Uint8Array;
     reset(): void;
   };
+  /** CommonJS interop: Node exposes the whole named-export record as the default. */
+  const gifencExports: {
+    quantize: typeof quantize;
+    applyPalette: typeof applyPalette;
+    GIFEncoder: typeof GIFEncoder;
+  };
+  export default gifencExports;
 }

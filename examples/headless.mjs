@@ -12,7 +12,8 @@ const [input,output='mockup.png'] = process.argv.slice(2);
 if(!input) { console.error('Usage: node examples/headless.mjs scene.json output.png'); process.exit(1); }
 const scene = deserializeScene(await readFile(input,'utf8'));
 const { outputFiles } = await build({entryPoints:['packages/sdk/src/index.ts'],bundle:true,format:'iife',globalName:'MockupStudio',write:false,target:'es2022',tsconfig:'tsconfig.json'});
-const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH || await binary.executablePath(),args:binary.args,headless:true});
+const useServerBinary = process.platform === 'linux' && !process.env.CHROMIUM_PATH;
+const browser = await chromium.launch({executablePath:process.env.CHROMIUM_PATH || (useServerBinary ? await binary.executablePath() : undefined),args:useServerBinary ? binary.args : [],headless:true});
 try {
   const page = await browser.newPage();
   await page.goto('about:blank');

@@ -65,14 +65,15 @@ The demo uses relative asset URLs, so the same build works under the repository 
 
 ## SDK usage
 
-The `@mockup-studio/*` packages are **not published to npm**. Consume them within the workspace, or build and pack all seven packages before installing the generated tarballs in another project:
+The workspace is prepared for manual npm publication under `@mockup-studio/*`; preparation does not publish anything. Until you publish, consume packages within the workspace or prepare all seven tarballs:
 
 ```bash
-pnpm build
-pnpm pack:all
+pnpm release:prepare
 ```
 
 Install all seven `.tgz` files from `artifacts/packages` together so their internal dependencies resolve locally. The product and repository use the name Device Mockup Studio; library imports retain the `@mockup-studio/*` namespace.
+
+See [manual publishing](./docs/PUBLISHING.md) for scope ownership, versioning, release validation, and dependency-ordered publish commands. Preparation runs typechecking, builds and archive validation, not unit tests.
 
 This browser example creates a scene from your image data URL and exports a PNG:
 
@@ -103,6 +104,28 @@ async function renderMockup(imageDataURL: string): Promise<Blob> {
 ```
 
 Set asset dimensions to match your input. Scene positions use node centers, dimensions use output pixels, rotations use degrees, and animation time uses seconds. Remote HTTP(S) assets require anonymous CORS permission from their server.
+
+### Headless embedding (bring your own UI)
+
+Use `@mockup-studio/sdk/headless` for state, undo/redo, rendering and export without mounting the editor or importing its UI or Three.js. It does not create controls, attach DOM elements, save drafts, or render automatically:
+
+```typescript
+import { createHeadlessStudio, createScene } from '@mockup-studio/sdk/headless';
+
+const studio = createHeadlessStudio({
+  canvas: document.querySelector<HTMLCanvasElement>('#preview')!,
+  scene: createScene({ width: 1200, height: 900 }),
+  onChange: scene => console.log(scene.name),
+});
+
+studio.store.update(scene => { scene.name = 'My embedded project'; });
+await studio.render();
+const png = await studio.exportImage({ format: 'png', scale: 2 });
+const json = studio.serialize();
+studio.destroy();
+```
+
+Importing the headless entry is SSR-safe; creating a studio in Node requires a canvas adapter. See the [headless integration guide](./docs/HEADLESS.md) for Node, assets, framework cleanup and optional 3D. A standalone browser ESM build is also generated at `artifacts/mockup-studio-headless.js`.
 
 ### Embed the editor
 
@@ -137,6 +160,8 @@ The editor scopes its own CSS and uses no React. Hosts provide fonts and persist
 ## Documentation
 
 - [API and integration](./docs/API.md)
+- [Headless embedding and Node rendering](./docs/HEADLESS.md)
+- [Manual npm publishing](./docs/PUBLISHING.md)
 - [3D geometry, lighting, and glass](./docs/SPATIAL.md)
 - [Device artwork and catalog](./docs/DEVICE-ARTWORK.md)
 - [Features, limitations, and remaining work](./docs/FEATURES.md)

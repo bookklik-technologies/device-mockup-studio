@@ -1,6 +1,6 @@
 {
   "name": "device-mockup-studio",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "license": "MIT",
   "homepage": "https://bookklik-technologies.github.io/device-mockup-studio/",
@@ -13,12 +13,17 @@
   },
   "type": "module",
   "packageManager": "pnpm@10.34.7",
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "dev": "node scripts/dev.mjs",
     "pack:all": "node scripts/pack.mjs",
+    "release:prepare": "pnpm typecheck && pnpm build && pnpm pack:all && pnpm release:validate",
+    "release:validate": "node scripts/validate-packages.mjs",
     "check": "pnpm typecheck && pnpm test && pnpm build",
     "test:browser": "node scripts/browser-tests.mjs",
     "test:all": "pnpm test && pnpm test:browser && pnpm test:spatial",

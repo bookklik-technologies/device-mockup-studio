@@ -114,7 +114,7 @@ const editor: EditorHandle = mountEditor(host, {
   scene: flatScene, theme, rendererFactory: canvas => new SpatialRenderer(canvas), onChange: persist,
   onThemeChange: theme => {
     document.documentElement.dataset.theme = theme;
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#ffffff' : '#242424');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#f3f4f4' : '#1b1b1b');
     try { localStorage.setItem('mockup-studio-theme', theme); } catch { /* Theme switching still works without persistence. */ }
   },
   onError: (error: Error) => console.warn('[Device Mockup Studio]', error.message),

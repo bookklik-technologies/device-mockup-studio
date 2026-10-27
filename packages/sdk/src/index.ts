@@ -5,3 +5,5 @@ export * from '@mockup-studio/render';
 export * from '@mockup-studio/media';
 export * from '@mockup-studio/editor';
 export * from '@mockup-studio/spatial';
+export { createHeadlessStudio } from './headless.js';
+export type { HeadlessStudio, HeadlessStudioOptions } from './headless.js';

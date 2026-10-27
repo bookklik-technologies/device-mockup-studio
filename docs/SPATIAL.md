@@ -1,4 +1,4 @@
-# Spatial rendering — v0.2
+# Spatial rendering — v0.3
 
 The optional `@mockup-studio/spatial` package adds real volumetric geometry and raster physically based rendering through Three.js r180/WebGL2. It is not CSS perspective, a faceted screenshot, or a claim of path-traced optics. The existing Canvas2D renderer remains available and unchanged for legacy scenes.
 

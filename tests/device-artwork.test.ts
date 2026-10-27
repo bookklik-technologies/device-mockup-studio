@@ -32,7 +32,8 @@ test('landscape rotates frame and cutout while keeping media upright; shared cac
   const content = createCanvas(80, 40), c = content.getContext('2d'); c.fillStyle = '#f00'; c.fillRect(0, 0, 40, 40); c.fillStyle = '#00f'; c.fillRect(40, 0, 40, 40);
   const assets = new AssetManager(), frames = new AssetManager(); assets.register('screen', content as unknown as CanvasImageSource); frames.register(d.id, frame as unknown as CanvasImageSource);
   const output = createCanvas(100, 60), renderer = new CanvasRenderer(output as unknown as HTMLCanvasElement, { assets, deviceAssets: frames, canvasFactory: (w, h) => createCanvas(w, h) as unknown as HTMLCanvasElement });
-  const scene = createScene({ width: 100, height: 60, background: { type: 'transparent' }, nodes: [createMockup({ deviceId: d.id, assetId: 'screen', x: 50, y: 30, width: 100, height: 60, lighting: 0, shadow: { color: '#000', opacity: 0, blur: 0, spread: 0, offsetX: 0, offsetY: 0 } })] });
+  // Scene validation requires the asset reference; rendering uses the registered node canvas.
+  const scene = createScene({ width: 100, height: 60, background: { type: 'transparent' }, assets: [{ id: 'screen', kind: 'image', src: 'data:image/png;base64,AA==', width: 80, height: 40 }], nodes: [createMockup({ deviceId: d.id, assetId: 'screen', x: 50, y: 30, width: 100, height: 60, lighting: 0, shadow: { color: '#000', opacity: 0, blur: 0, spread: 0, offsetX: 0, offsetY: 0 } })] });
   await renderer.render(scene);
   const pixel = (x: number, y: number) => [...output.getContext('2d').getImageData(x, y, 1, 1).data];
   assert.deepEqual(pixel(25, 30), [255, 0, 0, 255]); assert.deepEqual(pixel(65, 30), [0, 0, 255, 255]); assert.deepEqual(pixel(85, 30), [0, 0, 0, 255]);

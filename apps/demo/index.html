@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#242424">
+  <meta name="theme-color" content="#1b1b1b">
   <link rel="icon" type="image/svg+xml" href="./icon.svg">
   <link rel="stylesheet" href="./fonts/fonts.css">
   <meta name="description" content="Device Mockup Studio is a framework-free 2D and 3D design studio. Compose device mockups, explore physical glass, animate and export portable projects.">
@@ -16,7 +16,7 @@
       try { theme = localStorage.getItem('mockup-studio-theme'); } catch { /* Storage may be disabled. */ }
       if (theme !== 'light' && theme !== 'dark') theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
       document.documentElement.dataset.theme = theme;
-      document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'light' ? '#ffffff' : '#242424');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', theme === 'light' ? '#f3f4f4' : '#1b1b1b');
     })();
   </script>
   <style>

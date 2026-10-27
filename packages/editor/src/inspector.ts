@@ -240,6 +240,8 @@ function canvasInspector(ctx: InspectorContext): void {
   const { doc, parent, scene, update } = ctx;
   spatialInspector(ctx);
   const size = section(doc, parent, 'Artboard');
+  const projectName = text(doc, scene.name, value => update(d => { d.name = value.trim() || d.name; })); projectName.maxLength = 1024;
+  field(doc, size, 'Project name', projectName);
   const resize = (width: number, height: number) => update(draft => {
     const sx = width / draft.width, sy = height / draft.height;
     draft.width = width; draft.height = height;

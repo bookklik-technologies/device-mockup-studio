@@ -1,8 +1,21 @@
-# API guide — v0.2
+# API guide — v0.3
 
 See [SPATIAL.md](SPATIAL.md) for the optional 3D renderer, physical materials and editor rendererFactory. All v0.1 APIs below remain available.
 
 Public types are in packages/core/src/types.ts and each package's emitted declarations. All packages use ESM. There are no module-level DOM accesses.
+
+## Headless SDK
+
+Import `createHeadlessStudio` from `@mockup-studio/sdk/headless` for a UI-free integration. This entry re-exports core, presets, render and media, without importing the editor or Three.js. The full SDK also exports the factory.
+
+- Options: `scene`, `canvas`, `canvasFactory`, `assets`, `deviceAssets`, `encodeCanvas`, `onChange`, and optional `rendererFactory(canvas, options)`.
+- Exposes `store`, `renderer`, `canvas` and a copied `scene` snapshot.
+- `render(time?, options?)` and `exportImage(options?)` are asynchronous, serialized, and capture the current scene when called. Edits do not automatically render.
+- `serialize()` returns portable JSON; `load(json)` validates and replaces the scene with undo history.
+- `destroy()` is idempotent and releases the store and renderer, but not borrowed asset managers. Later studio operations fail.
+- SSR imports need no DOM. Node construction requires an injected canvas implementation, with a Blob encoder for export. Optional 3D requires an explicitly injected spatial renderer and WebGL2.
+
+See [HEADLESS.md](HEADLESS.md) for complete browser and Node examples, asset loading, ownership and lifecycle behavior.
 
 ## Scene model and factories
 

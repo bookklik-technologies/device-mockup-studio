@@ -21,8 +21,7 @@ for (const name of ['core','presets','render','spatial','media','editor','sdk'])
     map.sources = map.sources.map(source => `../src/${path.basename(source)}`);
     await writeFile(mapPath, JSON.stringify(map));
   }
-  await cp('LICENSE', `${dir}/LICENSE`);
-  await writeFile(`${dir}/README.md`, `# @mockup-studio/${name}\n\nPart of Device Mockup Studio (device-mockup-studio), a TypeScript composition library.\n\nLicense: MIT. See LICENSE for the full license text.\n\nSee the [workspace README](https://github.com/bookklik-technologies/device-mockup-studio#readme) and [API guide](https://github.com/bookklik-technologies/device-mockup-studio/blob/main/docs/API.md) for usage. Try the [demo](https://bookklik-technologies.github.io/device-mockup-studio/). ESM only, TypeScript declarations included. Browser rendering is separate from the DOM-free core.\n`);
+  await cp('docs/THIRD-PARTY.md', `${dir}/dist/THIRD-PARTY.md`);
 }
 await mkdir('apps/demo/dist', {recursive:true});
 await cp('icon.svg', 'apps/demo/dist/icon.svg');
@@ -36,4 +35,5 @@ await cp('packages/editor/node_modules/lucide/LICENSE', 'artifacts/licenses/Luci
 await cp('packages/media/node_modules/gifenc/LICENSE.md', 'artifacts/licenses/gifenc-LICENSE.txt');
 await cp('node_modules/@fontsource-variable/outfit/LICENSE', 'artifacts/licenses/Outfit-OFL.txt');
 await build({entryPoints:['packages/sdk/src/index.ts'],bundle:true,format:'esm',outfile:'artifacts/mockup-studio.js',sourcemap:true,target:'es2022',tsconfig:'tsconfig.json'});
-console.log('Built seven ESM packages, standalone SDK bundle, and runnable demo.');
+await build({entryPoints:['packages/sdk/src/headless.ts'],bundle:true,format:'esm',outfile:'artifacts/mockup-studio-headless.js',sourcemap:true,target:'es2022',tsconfig:'tsconfig.json'});
+console.log('Built seven ESM packages, full and headless SDK bundles, and runnable demo.');

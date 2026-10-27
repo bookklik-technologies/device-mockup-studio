@@ -1,6 +1,6 @@
 {
   "name": "@mockup-studio/spatial",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "description": "Device Mockup Studio optional Three.js spatial renderer with physical materials",
   "license": "MIT",
@@ -12,6 +12,13 @@
   },
   "bugs": {
     "url": "https://github.com/bookklik-technologies/device-mockup-studio/issues"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "sideEffects": false,
   "main": "./dist/index.js",
