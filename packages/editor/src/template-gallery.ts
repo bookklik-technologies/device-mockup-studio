@@ -1,6 +1,6 @@
-import { createScene, type SceneDocument } from '@bookklik/device-mockup-studio/core';
-import { applyTemplate, getTemplates, type SceneTemplate } from '@bookklik/device-mockup-studio/presets';
-import type { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { createScene, type SceneDocument } from '@bookklik/device-mockup-studio-core';
+import { applyTemplate, getTemplates, type SceneTemplate } from '@bookklik/device-mockup-studio-presets';
+import type { CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 import { button, element, field } from './dom.js';
 
 /** One reusable renderer and a bounded preview cache. */

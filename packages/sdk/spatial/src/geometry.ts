@@ -1,6 +1,6 @@
 import { BoxGeometry, BufferGeometry, ConeGeometry, CylinderGeometry, ExtrudeGeometry, IcosahedronGeometry, Path, Shape, SphereGeometry, TorusGeometry } from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { StudioError, type MeshNode } from '@bookklik/device-mockup-studio/core';
+import { StudioError, type MeshNode } from '@bookklik/device-mockup-studio-core';
 
 export type SpatialQuality = 'low' | 'medium' | 'high';
 export type MeshGeometryOptions = Pick<MeshNode, 'geometry' | 'width' | 'height' | 'depth' | 'bevel' | 'segments'>;

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createScene, createShape, createMesh, createMockup, createAnimationTracks, evaluateScene, SceneStore } from '@bookklik/device-mockup-studio/core';
+import { createScene, createShape, createMesh, createMockup, createAnimationTracks, evaluateScene, SceneStore } from '@bookklik/device-mockup-studio-core';
 import { alignmentDelta, constrainMovement, nodeBounds, snapBounds, snapTargets, type Alignment, type Bounds, type SnapTarget } from '../packages/editor/src/alignment.js';
 import { editNode, nodeCorners } from '../packages/editor/src/helpers.js';
 

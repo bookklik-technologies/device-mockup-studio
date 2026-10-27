@@ -1,4 +1,4 @@
-import { type MaterialPreset, type MeshGeometry, type MeshNode, type MockupNode, type PhysicalMaterial, type SceneDocument, type ShapeNode, type SpatialSettings, type TextNode } from '@bookklik/device-mockup-studio/core';
+import { type MaterialPreset, type MeshGeometry, type MeshNode, type MockupNode, type PhysicalMaterial, type SceneDocument, type ShapeNode, type SpatialSettings, type TextNode } from '@bookklik/device-mockup-studio-core';
 export interface TemplateDesign {
     description: string;
     build(context: TemplateContext): void;

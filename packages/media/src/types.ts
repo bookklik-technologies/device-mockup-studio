@@ -1,5 +1,5 @@
-import type { SceneDocument } from '@bookklik/device-mockup-studio/core';
-import type { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import type { SceneDocument } from '@bookklik/device-mockup-studio-core';
+import type { CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 
 export type ImageFormat = 'png' | 'jpeg' | 'webp';
 export type ImageMimeType = 'image/png' | 'image/jpeg' | 'image/webp';

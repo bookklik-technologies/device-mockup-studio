@@ -1,4 +1,4 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 import { photographicDevices } from './photographic.js';
 /** Original procedural frame parameters, not photographed or vendor-derived hardware assets.
  * Insets/radii are nominal output pixels; aspect is outer width / height. */

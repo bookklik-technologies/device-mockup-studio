@@ -1,5 +1,5 @@
-import { evaluateScene, StudioError, type SceneDocument, type SceneNode, type MockupNode, type TextNode, type ShapeNode, type DeviceDefinition } from '@bookklik/device-mockup-studio/core';
-import { getDevice } from '@bookklik/device-mockup-studio/presets';
+import { evaluateScene, StudioError, type SceneDocument, type SceneNode, type MockupNode, type TextNode, type ShapeNode, type DeviceDefinition } from '@bookklik/device-mockup-studio-core';
+import { getDevice } from '@bookklik/device-mockup-studio-presets';
 import { abortable, AssetManager, sourceSize, throwIfAborted, videoFrameSources } from './assets.js';
 import { clamp, context, defaultCanvasFactory, dimensions, fitted, rounded, texturedTriangle, type CanvasFactory, type MeshPoint, type StudioCanvas, MAX_OUTPUT_SIDE, MAX_OUTPUT_PIXELS } from './canvas.js';
 
@@ -33,7 +33,7 @@ export class CanvasRenderer {
 
   private check(scene: SceneDocument, time: number, scale: number): void {
     this.alive();
-    if (scene.spatial?.enabled || scene.nodes.some(node => node.type === 'mesh')) throw new StudioError('SPATIAL_RENDERER_REQUIRED', 'This scene requires SpatialRenderer from @bookklik/device-mockup-studio/spatial. CanvasRenderer does not flatten 3D content.');
+    if (scene.spatial?.enabled || scene.nodes.some(node => node.type === 'mesh')) throw new StudioError('SPATIAL_RENDERER_REQUIRED', 'This scene requires SpatialRenderer from @bookklik/device-mockup-studio-spatial. CanvasRenderer does not flatten 3D content.');
     if (!Number.isFinite(scale) || scale <= 0) throw new StudioError('SCALE_INVALID', 'Render scale must be a positive finite number.');
     if (!Number.isFinite(time)) throw new StudioError('TIME_INVALID', 'Frame time must be finite.');
     if (!Number.isFinite(scene.width) || !Number.isFinite(scene.height) || scene.width <= 0 || scene.height <= 0) throw new StudioError('OUTPUT_LIMIT', 'Scene dimensions must be positive finite numbers.');

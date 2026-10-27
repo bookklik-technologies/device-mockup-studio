@@ -1,4 +1,4 @@
-import { StudioError, type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { StudioError, type SceneDocument } from '@bookklik/device-mockup-studio-core';
 import type { CanvasBlobEncoder, ExportCanvas, ExportRenderer, ImageExportOptions, ImageFormat, ImageMimeType } from './types.js';
 import { abortable, acquireRenderer, checkAbort, numberInRange, outputDimensions, snapshot, verifyDimensions } from './common.js';
 

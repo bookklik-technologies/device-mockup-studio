@@ -1,4 +1,4 @@
-import { assertScene, cloneScene, createScene, StudioError } from '@bookklik/device-mockup-studio/core';
+import { assertScene, cloneScene, createScene, StudioError } from '@bookklik/device-mockup-studio-core';
 import { getPresets } from './compositions.js';
 import { TemplateContext } from './template-context.js';
 import { deviceDesigns } from './template-designs.js';

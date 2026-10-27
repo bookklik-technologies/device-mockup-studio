@@ -1,11 +1,11 @@
-import { createAnimationTracks, createMaterialPreset, resolveMockupGlassMaterial, createSpatialSettings, uid, type PhysicalMaterial, type SpatialSettings, type SpatialLight, type MeshNode, type SceneDocument, type SceneNode, type MockupStyle, type AnimationPreset } from '@bookklik/device-mockup-studio/core';
-import { framePresets, listDevices, getDevice, fontFamilies } from '@bookklik/device-mockup-studio/presets';
+import { createAnimationTracks, createMaterialPreset, resolveMockupGlassMaterial, createSpatialSettings, uid, type PhysicalMaterial, type SpatialSettings, type SpatialLight, type MeshNode, type SceneDocument, type SceneNode, type MockupStyle, type AnimationPreset } from '@bookklik/device-mockup-studio-core';
+import { framePresets, listDevices, getDevice, fontFamilies } from '@bookklik/device-mockup-studio-presets';
 import { button, check, color, disclosure, element, enhanceLayerFields, field, number, section, select, text } from './dom.js';
 import { setButtonContent } from './icons.js';
 import { editNode } from './helpers.js';
 import type { Alignment } from './alignment.js';
 import { deviceThumbnail } from './device-thumbnail.js';
-import { animationPresets, type Fit } from '@bookklik/device-mockup-studio/core';
+import { animationPresets, type Fit } from '@bookklik/device-mockup-studio-core';
 
 export interface InspectorContext {
   doc: Document;

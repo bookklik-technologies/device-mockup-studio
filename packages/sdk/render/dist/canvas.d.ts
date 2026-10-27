@@ -1,4 +1,4 @@
-import type { Fit } from '@bookklik/device-mockup-studio/core';
+import type { Fit } from '@bookklik/device-mockup-studio-core';
 export type StudioCanvas = HTMLCanvasElement | OffscreenCanvas;
 export type CanvasFactory = (width: number, height: number) => StudioCanvas;
 export declare const MAX_OUTPUT_SIDE = 8192;

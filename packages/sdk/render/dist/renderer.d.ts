@@ -1,4 +1,4 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
 import { AssetManager } from './assets.js';
 import { type CanvasFactory, type StudioCanvas } from './canvas.js';
 export interface RendererOptions {

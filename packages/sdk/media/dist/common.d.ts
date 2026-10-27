@@ -1,4 +1,4 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
 import type { ExportRenderer, TimelineExportOptions } from './types.js';
 export declare const MEDIA_LIMITS: Readonly<{
     maxSide: 8192;

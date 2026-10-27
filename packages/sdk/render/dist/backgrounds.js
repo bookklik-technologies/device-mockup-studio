@@ -1,4 +1,4 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 import { context, defaultCanvasFactory } from './canvas.js';
 import { sourceSize } from './assets.js';
 /** Deterministic, local palette sampling without network requests.

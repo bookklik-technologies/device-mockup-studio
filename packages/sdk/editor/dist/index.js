@@ -1,7 +1,7 @@
-import { SceneStore, createScene, createMockup, createShape, createText, createMesh, createSpatialSettings, deserializeScene, serializeScene, evaluateScene, cloneScene } from '@bookklik/device-mockup-studio/core';
-import { CanvasRenderer, createMagicBackground } from '@bookklik/device-mockup-studio/render';
-import { getDevice, listDevices, applyTemplate } from '@bookklik/device-mockup-studio/presets';
-import { exportGIF, exportImage, exportVideo } from '@bookklik/device-mockup-studio/media';
+import { SceneStore, createScene, createMockup, createShape, createText, createMesh, createSpatialSettings, deserializeScene, serializeScene, evaluateScene, cloneScene } from '@bookklik/device-mockup-studio-core';
+import { CanvasRenderer, createMagicBackground } from '@bookklik/device-mockup-studio-render';
+import { getDevice, listDevices, applyTemplate } from '@bookklik/device-mockup-studio-presets';
+import { exportGIF, exportImage, exportVideo } from '@bookklik/device-mockup-studio-media';
 import { button, element } from './dom.js';
 import { clientToScene, editNode, hitTest, nodeCorners } from './helpers.js';
 import { alignmentDelta, constrainMovement, nodeBounds, snapBounds, snapTargets } from './alignment.js';

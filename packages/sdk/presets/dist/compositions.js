@@ -1,4 +1,4 @@
-import { assertScene, clamp, cloneScene, StudioError } from '@bookklik/device-mockup-studio/core';
+import { assertScene, clamp, cloneScene, StudioError } from '@bookklik/device-mockup-studio-core';
 import { getDevice } from './devices.js';
 function gradient(colors, angle = 135, kind = 'linear') {
     return { type: 'gradient', kind, angle, stops: colors.map((color, i) => ({ color, offset: i / (colors.length - 1) })) };

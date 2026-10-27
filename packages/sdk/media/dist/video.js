@@ -1,4 +1,4 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 import { MEDIA_LIMITS, abortError, abortable, acquireRenderer, checkAbort, numberInRange, progress, snapshot, timeline, verifyDimensions, yieldTask } from './common.js';
 import { createMP4Adapter, createWebMAdapter } from './muxers.js';
 function timeout(promise, operation, signal) {

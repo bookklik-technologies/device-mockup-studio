@@ -1,4 +1,4 @@
-import { type Background } from '@bookklik/device-mockup-studio/core';
+import { type Background } from '@bookklik/device-mockup-studio-core';
 import { type CanvasFactory } from './canvas.js';
 export interface MagicBackgroundOptions {
     colors?: number;

@@ -1,5 +1,5 @@
 import { BufferGeometry } from 'three';
-import { type MeshNode } from '@bookklik/device-mockup-studio/core';
+import { type MeshNode } from '@bookklik/device-mockup-studio-core';
 export type SpatialQuality = 'low' | 'medium' | 'high';
 export type MeshGeometryOptions = Pick<MeshNode, 'geometry' | 'width' | 'height' | 'depth' | 'bevel' | 'segments'>;
 /** Subdivisions are deliberately not exponential. In particular, `segments` is NOT

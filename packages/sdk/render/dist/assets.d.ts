@@ -1,4 +1,4 @@
-import { type Asset, type SceneDocument, type MockupNode } from '@bookklik/device-mockup-studio/core';
+import { type Asset, type SceneDocument, type MockupNode } from '@bookklik/device-mockup-studio-core';
 export declare function sourceSize(source: CanvasImageSource): {
     width: number;
     height: number;

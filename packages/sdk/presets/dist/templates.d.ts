@@ -1,4 +1,4 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
 export interface SceneTemplate {
     id: string;
     name: string;

@@ -1,5 +1,5 @@
 {
-  "name": "@bookklik/device-mockup-studio/media",
+  "name": "@bookklik/device-mockup-studio-media",
   "version": "0.3.1",
   "private": true,
   "type": "module",
@@ -33,8 +33,8 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@bookklik/device-mockup-studio/core": "workspace:^",
-    "@bookklik/device-mockup-studio/render": "workspace:^",
+    "@bookklik/device-mockup-studio-core": "workspace:^",
+    "@bookklik/device-mockup-studio-render": "workspace:^",
     "gifenc": "1.0.3",
     "mp4-muxer": "5.2.2",
     "webm-muxer": "5.1.4"

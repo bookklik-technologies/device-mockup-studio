@@ -1,6 +1,6 @@
-import { createScene, createMesh, createShape, createMaterialPreset, createSpatialSettings } from '@bookklik/device-mockup-studio/core';
-import { SpatialRenderer } from '@bookklik/device-mockup-studio/spatial';
-import { exportImage } from '@bookklik/device-mockup-studio/media';
+import { createScene, createMesh, createShape, createMaterialPreset, createSpatialSettings } from '@bookklik/device-mockup-studio-core';
+import { SpatialRenderer } from '@bookklik/device-mockup-studio-spatial';
+import { exportImage } from '@bookklik/device-mockup-studio-media';
 
 export async function renderGlassStudy(canvas: HTMLCanvasElement) {
   const scene = createScene({

@@ -1,4 +1,4 @@
-import { StudioError, type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { StudioError, type SceneDocument } from '@bookklik/device-mockup-studio-core';
 import * as gifencModule from 'gifenc';
 import type { ExportRenderer, GIFExportOptions } from './types.js';
 import { MEDIA_LIMITS, abortable, acquireRenderer, checkAbort, numberInRange, progress, snapshot, timeline, verifyDimensions, yieldTask } from './common.js';

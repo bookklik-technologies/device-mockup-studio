@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assertScene, cloneScene, computeFit, createAnimationTracks, createMockup, createScene, createShape, createText, deserializeScene, ease, evaluateScene, SceneStore, serializeScene, StudioError, uid, validateScene } from '@bookklik/device-mockup-studio/core';
-import type { SceneDocument, SceneNode } from '@bookklik/device-mockup-studio/core';
+import { assertScene, cloneScene, computeFit, createAnimationTracks, createMockup, createScene, createShape, createText, deserializeScene, ease, evaluateScene, SceneStore, serializeScene, StudioError, uid, validateScene } from '@bookklik/device-mockup-studio-core';
+import type { SceneDocument, SceneNode } from '@bookklik/device-mockup-studio-core';
 
 function fixture(): SceneDocument {
   return createScene({ id: 'project', assets: [{ id: 'photo', kind: 'image', src: 'data:image/png;base64,AAAA', width: 1200, height: 800 }], nodes: [createMockup({ id: 'mockup', assetId: 'photo' }), createText({ id: 'title' }), createShape({ id: 'shape' })] });

@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createCanvas, type Canvas } from '@napi-rs/canvas';
-import { createScene, createShape, deserializeScene, type SceneDocument } from '@bookklik/device-mockup-studio/core';
-import { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
-import { MEDIA_LIMITS, blobToDataURL, createMP4Adapter, createWebMAdapter, downloadBlob, exportFrames, exportImage, exportSceneJSON, exportVideo, getCapabilities, probeCapabilities, shareScene, type CanvasBlobEncoder, type EncoderMuxerAdapter, type ExportRenderer, type ImageFormat, type VideoFormat } from '@bookklik/device-mockup-studio/media';
+import { createScene, createShape, deserializeScene, type SceneDocument } from '@bookklik/device-mockup-studio-core';
+import { CanvasRenderer } from '@bookklik/device-mockup-studio-render';
+import { MEDIA_LIMITS, blobToDataURL, createMP4Adapter, createWebMAdapter, downloadBlob, exportFrames, exportImage, exportSceneJSON, exportVideo, getCapabilities, probeCapabilities, shareScene, type CanvasBlobEncoder, type EncoderMuxerAdapter, type ExportRenderer, type ImageFormat, type VideoFormat } from '@bookklik/device-mockup-studio-media';
 
 const png = new Uint8Array([137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 0]);
 const jpeg = new Uint8Array([255, 216, 255, 224, 0, 0]);

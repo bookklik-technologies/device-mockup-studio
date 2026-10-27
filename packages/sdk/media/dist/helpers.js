@@ -1,4 +1,4 @@
-import { StudioError, serializeScene } from '@bookklik/device-mockup-studio/core';
+import { StudioError, serializeScene } from '@bookklik/device-mockup-studio-core';
 import { abortable, checkAbort, numberInRange, snapshot } from './common.js';
 /** Call from a user gesture. Revocation is deferred so the browser can consume the download URL. */
 export function downloadBlob(blob, filename) {

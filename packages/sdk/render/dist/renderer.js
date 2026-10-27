@@ -1,5 +1,5 @@
-import { evaluateScene, StudioError } from '@bookklik/device-mockup-studio/core';
-import { getDevice } from '@bookklik/device-mockup-studio/presets';
+import { evaluateScene, StudioError } from '@bookklik/device-mockup-studio-core';
+import { getDevice } from '@bookklik/device-mockup-studio-presets';
 import { abortable, AssetManager, sourceSize, throwIfAborted, videoFrameSources } from './assets.js';
 import { clamp, context, defaultCanvasFactory, dimensions, fitted, rounded, texturedTriangle, MAX_OUTPUT_SIDE, MAX_OUTPUT_PIXELS } from './canvas.js';
 const radians = (degrees) => degrees * Math.PI / 180;
@@ -31,7 +31,7 @@ export class CanvasRenderer {
     check(scene, time, scale) {
         this.alive();
         if (scene.spatial?.enabled || scene.nodes.some(node => node.type === 'mesh'))
-            throw new StudioError('SPATIAL_RENDERER_REQUIRED', 'This scene requires SpatialRenderer from @bookklik/device-mockup-studio/spatial. CanvasRenderer does not flatten 3D content.');
+            throw new StudioError('SPATIAL_RENDERER_REQUIRED', 'This scene requires SpatialRenderer from @bookklik/device-mockup-studio-spatial. CanvasRenderer does not flatten 3D content.');
         if (!Number.isFinite(scale) || scale <= 0)
             throw new StudioError('SCALE_INVALID', 'Render scale must be a positive finite number.');
         if (!Number.isFinite(time))

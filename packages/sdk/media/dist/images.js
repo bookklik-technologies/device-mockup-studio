@@ -1,4 +1,4 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 import { abortable, acquireRenderer, checkAbort, numberInRange, outputDimensions, snapshot, verifyDimensions } from './common.js';
 export function imageMime(format = 'png') {
     switch (format) {

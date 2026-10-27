@@ -1,4 +1,4 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
 import type { CanvasBlobEncoder, ExportCanvas, ExportRenderer, ImageExportOptions, ImageFormat, ImageMimeType } from './types.js';
 export declare function imageMime(format?: ImageFormat): ImageMimeType;
 export declare function imageQuality(quality?: number): number | undefined;

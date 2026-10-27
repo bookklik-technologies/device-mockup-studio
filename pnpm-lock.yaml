@@ -73,16 +73,16 @@ importers:
 
   packages/editor:
     dependencies:
-      '@bookklik/device-mockup-studio/core':
+      '@bookklik/device-mockup-studio-core':
         specifier: workspace:^
         version: link:../core
-      '@bookklik/device-mockup-studio/media':
+      '@bookklik/device-mockup-studio-media':
         specifier: workspace:^
         version: link:../media
-      '@bookklik/device-mockup-studio/presets':
+      '@bookklik/device-mockup-studio-presets':
         specifier: workspace:^
         version: link:../presets
-      '@bookklik/device-mockup-studio/render':
+      '@bookklik/device-mockup-studio-render':
         specifier: workspace:^
         version: link:../render
       lucide:
@@ -91,10 +91,10 @@ importers:
 
   packages/media:
     dependencies:
-      '@bookklik/device-mockup-studio/core':
+      '@bookklik/device-mockup-studio-core':
         specifier: workspace:^
         version: link:../core
-      '@bookklik/device-mockup-studio/render':
+      '@bookklik/device-mockup-studio-render':
         specifier: workspace:^
         version: link:../render
       gifenc:
@@ -109,16 +109,16 @@ importers:
 
   packages/presets:
     dependencies:
-      '@bookklik/device-mockup-studio/core':
+      '@bookklik/device-mockup-studio-core':
         specifier: workspace:^
         version: link:../core
 
   packages/render:
     dependencies:
-      '@bookklik/device-mockup-studio/core':
+      '@bookklik/device-mockup-studio-core':
         specifier: workspace:^
         version: link:../core
-      '@bookklik/device-mockup-studio/presets':
+      '@bookklik/device-mockup-studio-presets':
         specifier: workspace:^
         version: link:../presets
 
@@ -148,13 +148,13 @@ importers:
 
   packages/spatial:
     dependencies:
-      '@bookklik/device-mockup-studio/core':
+      '@bookklik/device-mockup-studio-core':
         specifier: workspace:^
         version: link:../core
-      '@bookklik/device-mockup-studio/presets':
+      '@bookklik/device-mockup-studio-presets':
         specifier: workspace:^
         version: link:../presets
-      '@bookklik/device-mockup-studio/render':
+      '@bookklik/device-mockup-studio-render':
         specifier: workspace:^
         version: link:../render
       '@types/three':

@@ -1,4 +1,4 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 const PAGE_SIZE = 64 * 1024;
 /** A seekable, capped StreamTarget sink. Header rewrites overwrite bytes instead of appending corrupt data. */
 class BoundedSink {

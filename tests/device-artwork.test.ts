@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createCanvas } from '@napi-rs/canvas';
-import { createMockup, createScene, StudioError, type DeviceDefinition } from '@bookklik/device-mockup-studio/core';
-import { getDevice, listDevices, registerDevice } from '@bookklik/device-mockup-studio/presets';
-import { AssetManager, CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { createMockup, createScene, StudioError, type DeviceDefinition } from '@bookklik/device-mockup-studio-core';
+import { getDevice, listDevices, registerDevice } from '@bookklik/device-mockup-studio-presets';
+import { AssetManager, CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 
 const definition = (): DeviceDefinition => ({ id: 'test:artwork', name: 'Test artwork', category: 'phone', aspect: .6, inset: { top: 0, left: 0, bottom: 0, right: 0 }, radius: 0, screenRadius: 0, artwork: { src: 'data:image/png;base64,AA==', width: 60, height: 100, screen: { x: 10, y: 10, width: 40, height: 80, radius: 0 }, orientation: 0 } });
 const code = (expected: string) => (error: unknown) => error instanceof StudioError && error.code === expected;

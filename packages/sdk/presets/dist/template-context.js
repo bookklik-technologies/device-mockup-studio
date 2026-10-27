@@ -1,4 +1,4 @@
-import { createMaterialPreset, createMesh, createMockup, createShape, createSpatialSettings, createText, uid, } from '@bookklik/device-mockup-studio/core';
+import { createMaterialPreset, createMesh, createMockup, createShape, createSpatialSettings, createText, uid, } from '@bookklik/device-mockup-studio-core';
 import { getDevice } from './devices.js';
 /** Shared drawing primitives only. Art direction and responsive placement belong to each design. */
 export class TemplateContext {

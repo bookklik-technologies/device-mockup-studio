@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assertScene, createAnimationTracks, createMockup, createScene, createText, deserializeScene, serializeScene, SceneStore } from '@bookklik/device-mockup-studio/core';
-import { applyTemplate, fontFamilies, getTemplates } from '@bookklik/device-mockup-studio/presets';
+import { assertScene, createAnimationTracks, createMockup, createScene, createText, deserializeScene, serializeScene, SceneStore } from '@bookklik/device-mockup-studio-core';
+import { applyTemplate, fontFamilies, getTemplates } from '@bookklik/device-mockup-studio-presets';
 
 test('complete templates have isolated metadata and cover both workspaces', () => {
   assert.equal(getTemplates({ workspace:'2d' }).length, 16);

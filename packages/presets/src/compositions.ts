@@ -1,5 +1,5 @@
-import { assertScene, clamp, cloneScene, StudioError } from '@bookklik/device-mockup-studio/core';
-import type { AnimatableProperty, Background, MockupNode, MockupStyle, SceneDocument, SceneEffects, ScenePreset } from '@bookklik/device-mockup-studio/core';
+import { assertScene, clamp, cloneScene, StudioError } from '@bookklik/device-mockup-studio-core';
+import type { AnimatableProperty, Background, MockupNode, MockupStyle, SceneDocument, SceneEffects, ScenePreset } from '@bookklik/device-mockup-studio-core';
 import { getDevice } from './devices.js';
 
 type Layout = 'center' | 'left' | 'right' | 'diagonal' | 'duo' | 'stack' | 'gallery' | 'portrait' | 'hero' | 'fan' | 'wall' | 'inset';

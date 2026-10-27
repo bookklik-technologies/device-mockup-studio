@@ -1,6 +1,6 @@
 import { BoxGeometry, ConeGeometry, CylinderGeometry, ExtrudeGeometry, IcosahedronGeometry, Path, Shape, SphereGeometry, TorusGeometry } from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 const finite = (n, min, max) => Number.isFinite(n) && n >= min && n <= max;
 /** Subdivisions are deliberately not exponential. In particular, `segments` is NOT
  * passed through as the detail level of an icosahedron or rounded-box geometry. */

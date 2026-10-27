@@ -1,5 +1,5 @@
 {
-  "name": "@bookklik/device-mockup-studio/core",
+  "name": "@bookklik/device-mockup-studio-core",
   "version": "0.3.1",
   "private": true,
   "type": "module",

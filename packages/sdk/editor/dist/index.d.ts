@@ -1,5 +1,5 @@
-import { SceneStore, type SceneDocument } from '@bookklik/device-mockup-studio/core';
-import { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { SceneStore, type SceneDocument } from '@bookklik/device-mockup-studio-core';
+import { CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 export interface EditorOptions {
     scene?: SceneDocument;
     onChange?: (scene: SceneDocument) => void;

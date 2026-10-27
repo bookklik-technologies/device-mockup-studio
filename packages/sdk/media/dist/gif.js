@@ -1,4 +1,4 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 import * as gifencModule from 'gifenc';
 import { MEDIA_LIMITS, abortable, acquireRenderer, checkAbort, numberInRange, progress, snapshot, timeline, verifyDimensions, yieldTask } from './common.js';
 /** gifenc ships a CommonJS entry that hides its named exports from Node ESM,

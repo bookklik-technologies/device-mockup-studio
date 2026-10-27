@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createCanvas } from '@napi-rs/canvas';
-import { createScene, createText } from '@bookklik/device-mockup-studio/core';
-import { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { createScene, createText } from '@bookklik/device-mockup-studio-core';
+import { CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 
 function rendererWithFonts(load: (font: string, sample: string) => Promise<unknown>) {
   const canvas = createCanvas(40, 40);

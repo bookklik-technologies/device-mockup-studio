@@ -1,11 +1,11 @@
-import { SceneStore, StudioError, createScene, deserializeScene, serializeScene, type SceneDocument, type SceneListener } from '@bookklik/device-mockup-studio/core';
-import { CanvasRenderer, type CanvasFactory, type RendererOptions, type RenderOptions } from '@bookklik/device-mockup-studio/render';
-import { exportImage, type CanvasBlobEncoder, type ImageExportOptions } from '@bookklik/device-mockup-studio/media';
+import { SceneStore, StudioError, createScene, deserializeScene, serializeScene, type SceneDocument, type SceneListener } from '@bookklik/device-mockup-studio-core';
+import { CanvasRenderer, type CanvasFactory, type RendererOptions, type RenderOptions } from '@bookklik/device-mockup-studio-render';
+import { exportImage, type CanvasBlobEncoder, type ImageExportOptions } from '@bookklik/device-mockup-studio-media';
 
-export * from '@bookklik/device-mockup-studio/core';
-export * from '@bookklik/device-mockup-studio/presets';
-export * from '@bookklik/device-mockup-studio/render';
-export * from '@bookklik/device-mockup-studio/media';
+export * from '@bookklik/device-mockup-studio-core';
+export * from '@bookklik/device-mockup-studio-presets';
+export * from '@bookklik/device-mockup-studio-render';
+export * from '@bookklik/device-mockup-studio-media';
 
 export interface HeadlessStudioOptions extends RendererOptions {
   scene?: SceneDocument;

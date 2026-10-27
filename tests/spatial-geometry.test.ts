@@ -5,8 +5,8 @@ import { createCanvas, type Canvas } from '@napi-rs/canvas';
 import { createRequire } from 'node:module';
 // Three is an optional spatial-package dependency, not a root/core dependency.
 const { Mesh, MeshBasicMaterial, Raycaster, Vector3 } = createRequire(new URL('../packages/spatial/package.json', import.meta.url))('three') as typeof import('three');
-import { createScene, createMesh, createMockup, createShape, createSpatialSettings, type MeshGeometry } from '@bookklik/device-mockup-studio/core';
-import { AssetManager, CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { createScene, createMesh, createMockup, createShape, createSpatialSettings, type MeshGeometry } from '@bookklik/device-mockup-studio-core';
+import { AssetManager, CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 import { SpatialRenderer, createMeshGeometry, createGlassRingGeometry, boundedSegments, getSpatialCapabilities, SPATIAL_LIMITS } from '../packages/spatial/src/index.js';
 
 const asCanvas = (canvas: Canvas): HTMLCanvasElement => canvas as unknown as HTMLCanvasElement;

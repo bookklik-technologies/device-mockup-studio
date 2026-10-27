@@ -1,5 +1,5 @@
 {
-  "name": "@bookklik/device-mockup-studio/editor",
+  "name": "@bookklik/device-mockup-studio-editor",
   "version": "0.3.1",
   "private": true,
   "type": "module",
@@ -33,10 +33,10 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@bookklik/device-mockup-studio/core": "workspace:^",
-    "@bookklik/device-mockup-studio/media": "workspace:^",
-    "@bookklik/device-mockup-studio/presets": "workspace:^",
-    "@bookklik/device-mockup-studio/render": "workspace:^",
+    "@bookklik/device-mockup-studio-core": "workspace:^",
+    "@bookklik/device-mockup-studio-media": "workspace:^",
+    "@bookklik/device-mockup-studio-presets": "workspace:^",
+    "@bookklik/device-mockup-studio-render": "workspace:^",
     "lucide": "^1.61.0"
   }
 }

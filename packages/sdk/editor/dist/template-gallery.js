@@ -1,5 +1,5 @@
-import { createScene } from '@bookklik/device-mockup-studio/core';
-import { applyTemplate, getTemplates } from '@bookklik/device-mockup-studio/presets';
+import { createScene } from '@bookklik/device-mockup-studio-core';
+import { applyTemplate, getTemplates } from '@bookklik/device-mockup-studio-presets';
 import { button, element, field } from './dom.js';
 /** One reusable renderer and a bounded preview cache. */
 export class TemplateGallery {

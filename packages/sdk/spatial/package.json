@@ -1,5 +1,5 @@
 {
-  "name": "@bookklik/device-mockup-studio/spatial",
+  "name": "@bookklik/device-mockup-studio-spatial",
   "version": "0.3.1",
   "private": true,
   "type": "module",
@@ -33,9 +33,9 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@bookklik/device-mockup-studio/core": "workspace:^",
-    "@bookklik/device-mockup-studio/presets": "workspace:^",
-    "@bookklik/device-mockup-studio/render": "workspace:^",
+    "@bookklik/device-mockup-studio-core": "workspace:^",
+    "@bookklik/device-mockup-studio-presets": "workspace:^",
+    "@bookklik/device-mockup-studio-render": "workspace:^",
     "@types/three": "0.180.0",
     "@webgpu/types": "0.1.74",
     "three": "0.180.0"

@@ -1,4 +1,4 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
 import type { Alignment } from './alignment.js';
 export interface InspectorContext {
     doc: Document;

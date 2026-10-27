@@ -1,4 +1,4 @@
-import { computeFit, StudioError } from '@bookklik/device-mockup-studio/core';
+import { computeFit, StudioError } from '@bookklik/device-mockup-studio-core';
 import { sourceSize } from './assets.js';
 export const MAX_OUTPUT_SIDE = 8192;
 export const MAX_OUTPUT_PIXELS = 32_000_000;

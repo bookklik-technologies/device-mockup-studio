@@ -1,4 +1,4 @@
-import type { SceneDocument } from '@bookklik/device-mockup-studio/core';
+import type { SceneDocument } from '@bookklik/device-mockup-studio-core';
 import type { ExportedFrame, ExportRenderer, FrameExportOptions } from './types.js';
 import { abortable, acquireRenderer, checkAbort, progress, snapshot, timeline, verifyDimensions, yieldTask } from './common.js';
 import { encodeCanvasBlob, imageMime, imageQuality } from './images.js';

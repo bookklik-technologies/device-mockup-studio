@@ -1,4 +1,4 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
 const MAX_FILE_BYTES = 32 * 1024 * 1024;
 const MAX_SOURCE_PIXELS = 80_000_000;
 const LOAD_TIMEOUT = 30_000;

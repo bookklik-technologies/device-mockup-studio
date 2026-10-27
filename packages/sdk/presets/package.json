@@ -1,5 +1,5 @@
 {
-  "name": "@bookklik/device-mockup-studio/presets",
+  "name": "@bookklik/device-mockup-studio-presets",
   "version": "0.3.1",
   "private": true,
   "type": "module",
@@ -33,6 +33,6 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@bookklik/device-mockup-studio/core": "workspace:^"
+    "@bookklik/device-mockup-studio-core": "workspace:^"
   }
 }

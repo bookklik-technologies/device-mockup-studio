@@ -1,5 +1,5 @@
-import { computeFit, StudioError } from '@bookklik/device-mockup-studio/core';
-import type { Fit } from '@bookklik/device-mockup-studio/core';
+import { computeFit, StudioError } from '@bookklik/device-mockup-studio-core';
+import type { Fit } from '@bookklik/device-mockup-studio-core';
 import { sourceSize } from './assets.js';
 
 export type StudioCanvas = HTMLCanvasElement | OffscreenCanvas;

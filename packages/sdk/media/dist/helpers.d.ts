@@ -1,4 +1,4 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
 import type { ShareProvider } from './types.js';
 /** Call from a user gesture. Revocation is deferred so the browser can consume the download URL. */
 export declare function downloadBlob(blob: Blob, filename: string): void;

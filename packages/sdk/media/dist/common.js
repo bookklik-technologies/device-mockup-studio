@@ -1,4 +1,4 @@
-import { StudioError, cloneScene } from '@bookklik/device-mockup-studio/core';
+import { StudioError, cloneScene } from '@bookklik/device-mockup-studio-core';
 export const MEDIA_LIMITS = Object.freeze({ maxSide: 8192, maxPixels: 32_000_000, maxVideoSide: 4096, maxVideoPixels: 16_777_216, maxFrames: 10_000, maxFps: 240, maxDuration: 3600, defaultOutputBytes: 128 * 1024 * 1024, maxOutputBytes: 256 * 1024 * 1024, maxPendingFrames: 4 });
 export function abortError(signal) {
     const error = new Error('Media export cancelled.', { cause: signal?.reason });

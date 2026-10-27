@@ -1,8 +1,8 @@
 import { ACESFilmicToneMapping, AddEquation, AmbientLight, Box3, CanvasTexture, Color, CustomBlending, DirectionalLight, DoubleSide, Group, LinearFilter, LinearMipmapLinearFilter, Mesh, MeshBasicMaterial, MeshPhysicalMaterial, OneFactor, OneMinusSrcAlphaFactor, OrthographicCamera, PCFSoftShadowMap, PlaneGeometry, PMREMGenerator, PointLight, Scene, ShadowMaterial, SrcAlphaFactor, SRGBColorSpace, WebGLRenderer, } from 'three';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-import { resolveMockupGlassMaterial, createSpatialSettings, evaluateScene, StudioError, } from '@bookklik/device-mockup-studio/core';
-import { getDevice } from '@bookklik/device-mockup-studio/presets';
-import { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { resolveMockupGlassMaterial, createSpatialSettings, evaluateScene, StudioError, } from '@bookklik/device-mockup-studio-core';
+import { getDevice } from '@bookklik/device-mockup-studio-presets';
+import { CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 import { createGlassRingGeometry, createMeshGeometry, meshGeometryKey } from './geometry.js';
 export const SPATIAL_LIMITS = Object.freeze({ outputSide: 4096, outputPixels: 16_000_000, textureSide: 2048, texturePixels: 16_000_000, volumes: 32, texturedNodes: 256 });
 const NO_EFFECTS = { noise: 0, vignette: 0, saturation: 1, contrast: 1, brightness: 1, scanlines: 0, glitch: 0 };

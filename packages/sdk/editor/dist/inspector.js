@@ -1,10 +1,10 @@
-import { createAnimationTracks, createMaterialPreset, resolveMockupGlassMaterial, createSpatialSettings, uid } from '@bookklik/device-mockup-studio/core';
-import { framePresets, listDevices, getDevice, fontFamilies } from '@bookklik/device-mockup-studio/presets';
+import { createAnimationTracks, createMaterialPreset, resolveMockupGlassMaterial, createSpatialSettings, uid } from '@bookklik/device-mockup-studio-core';
+import { framePresets, listDevices, getDevice, fontFamilies } from '@bookklik/device-mockup-studio-presets';
 import { button, check, color, disclosure, element, enhanceLayerFields, field, number, section, select, text } from './dom.js';
 import { setButtonContent } from './icons.js';
 import { editNode } from './helpers.js';
 import { deviceThumbnail } from './device-thumbnail.js';
-import { animationPresets } from '@bookklik/device-mockup-studio/core';
+import { animationPresets } from '@bookklik/device-mockup-studio-core';
 const pendingMotion = new WeakMap();
 const motionLabels = { float: 'Float', orbit: 'Orbit', reveal: 'Reveal', zoom: 'Zoom', parallax: 'Parallax', 'fade-in': 'Fade in', 'fade-out': 'Fade out', 'slide-left': 'Slide in from left', 'slide-right': 'Slide in from right', 'slide-up': 'Slide up', 'slide-down': 'Slide down', pulse: 'Pulse', bounce: 'Bounce', sway: 'Sway', spin: 'Spin', flip: 'Flip reveal' };
 function currentMotion(scene, node) {

@@ -1,5 +1,5 @@
-import { StudioError } from '@bookklik/device-mockup-studio/core';
-import type { DeviceDefinition } from '@bookklik/device-mockup-studio/core';
+import { StudioError } from '@bookklik/device-mockup-studio-core';
+import type { DeviceDefinition } from '@bookklik/device-mockup-studio-core';
 import { photographicDevices } from './photographic.js';
 
 /** Original procedural frame parameters, not photographed or vendor-derived hardware assets.

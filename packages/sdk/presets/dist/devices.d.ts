@@ -1,4 +1,4 @@
-import type { DeviceDefinition } from '@bookklik/device-mockup-studio/core';
+import type { DeviceDefinition } from '@bookklik/device-mockup-studio-core';
 export declare function getDevice(id: string): DeviceDefinition;
 /** The default preserves SDK compatibility; editors can hide legacy generic frames. */
 export declare function listDevices(options?: {

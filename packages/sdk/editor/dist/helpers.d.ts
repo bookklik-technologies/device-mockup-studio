@@ -1,4 +1,4 @@
-import type { SceneDocument, SceneNode } from '@bookklik/device-mockup-studio/core';
+import type { SceneDocument, SceneNode } from '@bookklik/device-mockup-studio-core';
 export interface Point {
     x: number;
     y: number;

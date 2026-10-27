@@ -1,5 +1,5 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
-import { CanvasRenderer, type RendererOptions, type RenderOptions } from '@bookklik/device-mockup-studio/render';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
+import { CanvasRenderer, type RendererOptions, type RenderOptions } from '@bookklik/device-mockup-studio-render';
 type StudioCanvas = CanvasRenderer['canvas'];
 export declare const SPATIAL_LIMITS: Readonly<{
     outputSide: 4096;

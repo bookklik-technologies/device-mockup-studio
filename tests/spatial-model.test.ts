@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assertScene, cloneScene, createAnimationTracks, createMaterialPreset, createMesh, createMockup, createPhysicalMaterial, createScene, createShape, createSpatialSettings, createText, deserializeScene, evaluateScene, SceneStore, serializeScene, StudioError, validateScene } from '@bookklik/device-mockup-studio/core';
-import type { MaterialPreset, MeshNode, MeshOptions, PhysicalMaterial, SceneDocument, SceneNode, SpatialLight, SpatialSettings } from '@bookklik/device-mockup-studio/core';
+import { assertScene, cloneScene, createAnimationTracks, createMaterialPreset, createMesh, createMockup, createPhysicalMaterial, createScene, createShape, createSpatialSettings, createText, deserializeScene, evaluateScene, SceneStore, serializeScene, StudioError, validateScene } from '@bookklik/device-mockup-studio-core';
+import type { MaterialPreset, MeshNode, MeshOptions, PhysicalMaterial, SceneDocument, SceneNode, SpatialLight, SpatialSettings } from '@bookklik/device-mockup-studio-core';
 
 const errorCode = (code: string) => (error: unknown): boolean => error instanceof StudioError && error.code === code;
 function fixture(): SceneDocument {

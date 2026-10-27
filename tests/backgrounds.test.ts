@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { createCanvas } from '@napi-rs/canvas';
-import { createMagicBackground } from '@bookklik/device-mockup-studio/render';
-import { createScene, validateScene } from '@bookklik/device-mockup-studio/core';
+import { createMagicBackground } from '@bookklik/device-mockup-studio-render';
+import { createScene, validateScene } from '@bookklik/device-mockup-studio-core';
 const factory=(w:number,h:number)=>createCanvas(w,h) as unknown as HTMLCanvasElement;
 const image=()=>{const c=createCanvas(80,80),ctx=c.getContext('2d');ctx.fillStyle='#f04070';ctx.fillRect(0,0,40,80);ctx.fillStyle='#3040d0';ctx.fillRect(40,0,40,80);return c as unknown as CanvasImageSource;};
 test('media-derived backgrounds are deterministic, valid and use sampled colors',()=>{

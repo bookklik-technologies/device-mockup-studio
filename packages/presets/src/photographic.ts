@@ -1,4 +1,4 @@
-import type { DeviceDefinition } from '@bookklik/device-mockup-studio/core';
+import type { DeviceDefinition } from '@bookklik/device-mockup-studio-core';
 import { artworkSources } from './artwork-data.js';
 
 // Screen measurements are in original PNG pixels, including the transparent margin.

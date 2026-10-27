@@ -1,5 +1,5 @@
-import { type SceneDocument } from '@bookklik/device-mockup-studio/core';
-import type { CanvasRenderer } from '@bookklik/device-mockup-studio/render';
+import { type SceneDocument } from '@bookklik/device-mockup-studio-core';
+import type { CanvasRenderer } from '@bookklik/device-mockup-studio-render';
 /** One reusable renderer and a bounded preview cache. */
 export declare class TemplateGallery {
     private readonly doc;

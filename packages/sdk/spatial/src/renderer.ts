@@ -9,9 +9,9 @@ import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 import {
   resolveMockupGlassMaterial, createSpatialSettings, evaluateScene, StudioError,
   type MeshNode, type MockupNode, type PhysicalMaterial, type SceneDocument, type SceneNode, type SpatialSettings,
-} from '@bookklik/device-mockup-studio/core';
-import { getDevice } from '@bookklik/device-mockup-studio/presets';
-import { CanvasRenderer, type CanvasFactory, type RendererOptions, type RenderOptions } from '@bookklik/device-mockup-studio/render';
+} from '@bookklik/device-mockup-studio-core';
+import { getDevice } from '@bookklik/device-mockup-studio-presets';
+import { CanvasRenderer, type CanvasFactory, type RendererOptions, type RenderOptions } from '@bookklik/device-mockup-studio-render';
 import { createGlassRingGeometry, createMeshGeometry, meshGeometryKey, type SpatialQuality } from './geometry.js';
 
 type StudioCanvas = CanvasRenderer['canvas'];
