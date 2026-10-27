@@ -1,0 +1,1 @@
+{"version":3,"file":"frames.d.ts","sourceRoot":"","sources":["../src/frames.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,aAAa,EAAE,MAAM,qCAAqC,CAAC;AACzE,OAAO,KAAK,EAAE,aAAa,EAAE,cAAc,EAAE,kBAAkB,EAAE,MAAM,YAAY,CAAC;AAIpF,uGAAuG;AACvG,wBAAuB,YAAY,CAAC,QAAQ,EAAE,cAAc,EAAE,KAAK,EAAE,aAAa,EAAE,OAAO,GAAE,kBAAuB,GAAG,cAAc,CAAC,aAAa,CAAC,CAqBnJ"}

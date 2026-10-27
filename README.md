@@ -73,7 +73,7 @@ After publication, install with `npm install @bookklik/device-mockup-studio`. Be
 pnpm release:prepare
 ```
 
-Install `artifacts/packages/bookklik-device-mockup-studio-0.3.0.tgz` directly in a consumer project. All workspace modules and their declarations are included; no other `@bookklik` package needs to be published or installed separately.
+Install `artifacts/packages/bookklik-device-mockup-studio-0.3.1.tgz` directly in a consumer project. All workspace modules and their declarations are included; no other `@bookklik` package needs to be published or installed separately.
 
 See [manual publishing](./docs/PUBLISHING.md) for scope ownership, versioning, release validation, and the single publish command. Preparation runs typechecking, builds and archive validation, not unit tests.
 
@@ -161,6 +161,7 @@ The editor scopes its own CSS and uses no React. Hosts provide fonts and persist
 
 ## Documentation
 
+- [Documentation site](./docs/README.md) — VitePress site over all guides; run `pnpm docs` to serve locally
 - [API and integration](./docs/API.md)
 - [Headless embedding and Node rendering](./docs/HEADLESS.md)
 - [Manual npm publishing](./docs/PUBLISHING.md)

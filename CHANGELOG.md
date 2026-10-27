@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 — 2026-10-27
+
+- Release metadata patch bump; no functional changes.
+
 ## 0.3.0 — 2026-10-27
 
 - Consolidate publication into `@bookklik/device-mockup-studio`, with headless and module subpath exports; keep supporting workspaces private.

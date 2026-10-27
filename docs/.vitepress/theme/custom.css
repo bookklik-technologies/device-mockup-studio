@@ -1,0 +1,47 @@
+:root {
+  --studio-accent: #00ffff;
+  --studio-ink: #404040;
+  --vp-c-brand-1: #007575;
+  --vp-c-brand-2: #006565;
+  --vp-c-brand-3: #005454;
+  --vp-c-brand-soft: rgba(0, 170, 170, 0.12);
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-text: var(--studio-ink);
+  --vp-button-brand-bg: var(--studio-accent);
+  --vp-button-brand-hover-border: transparent;
+  --vp-button-brand-hover-text: var(--studio-ink);
+  --vp-button-brand-hover-bg: #00e6e6;
+  --vp-button-brand-active-border: transparent;
+  --vp-button-brand-active-text: var(--studio-ink);
+  --vp-button-brand-active-bg: #00cccc;
+  --vp-home-hero-name-color: var(--vp-c-brand-1);
+  --vp-home-hero-name-background: none;
+  --vp-code-color: var(--vp-c-brand-1);
+  --vp-c-tip-1: var(--vp-c-brand-1);
+  --vp-c-tip-2: var(--vp-c-brand-2);
+  --vp-c-tip-3: var(--vp-c-brand-3);
+  --vp-c-tip-soft: var(--vp-c-brand-soft);
+  --vp-local-search-highlight-bg: var(--studio-accent);
+  --vp-local-search-highlight-text: var(--studio-ink);
+}
+
+.dark {
+  --vp-c-brand-1: var(--studio-accent);
+  --vp-c-brand-2: #66ffff;
+  --vp-c-brand-3: #00e6e6;
+  --vp-c-brand-soft: rgba(0, 255, 255, 0.14);
+}
+
+::selection {
+  color: var(--studio-ink);
+  background: var(--studio-accent);
+}
+
+:focus-visible {
+  outline-color: var(--vp-c-brand-1);
+}
+
+input,
+textarea {
+  caret-color: var(--vp-c-brand-1);
+}

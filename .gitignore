@@ -4,3 +4,6 @@ artifacts/
 packages/*/dist/
 apps/demo/dist/
 test-results/
+
+docs/.vitepress/dist/
+docs/.vitepress/cache/

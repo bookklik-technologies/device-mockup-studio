@@ -1,0 +1,14 @@
+[
+    { "id": "outfit", "family": "Outfit", "category": "Sans serif", "weights": "100 900" },
+    { "id": "inter", "family": "Inter", "category": "Sans serif", "weights": "100 900" },
+    { "id": "dm-sans", "family": "DM Sans", "category": "Sans serif", "weights": "100 1000" },
+    { "id": "manrope", "family": "Manrope", "category": "Sans serif", "weights": "200 800" },
+    { "id": "space-grotesk", "family": "Space Grotesk", "category": "Sans serif", "weights": "300 700" },
+    { "id": "plus-jakarta-sans", "family": "Plus Jakarta Sans", "category": "Sans serif", "weights": "200 800" },
+    { "id": "sora", "family": "Sora", "category": "Sans serif", "weights": "100 800" },
+    { "id": "lora", "family": "Lora", "category": "Serif", "weights": "400 700" },
+    { "id": "playfair-display", "family": "Playfair Display", "category": "Serif", "weights": "400 900" },
+    { "id": "fraunces", "family": "Fraunces", "category": "Serif", "weights": "100 900" },
+    { "id": "bricolage-grotesque", "family": "Bricolage Grotesque", "category": "Display", "weights": "200 800" },
+    { "id": "jetbrains-mono", "family": "JetBrains Mono", "category": "Monospace", "weights": "100 800" }
+]

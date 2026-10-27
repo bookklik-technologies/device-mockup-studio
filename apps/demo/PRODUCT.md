@@ -38,7 +38,7 @@ Confirmed functionality:
 Durable constraints (confirmed binding):
 - Client-side only: no server, no upload; all processing and export happen in the browser.
 - MIT license.
-- Release preparation produces one `bookklik-device-mockup-studio-0.3.0.tgz` tarball via `pnpm release:prepare`; publication to npm is manual. All supporting workspaces remain private.
+- Release preparation produces one `bookklik-device-mockup-studio-0.3.1.tgz` tarball via `pnpm release:prepare`; publication to npm is manual. All supporting workspaces remain private.
 - Video export depends on browser codec support.
 - Remote HTTP(S) assets require anonymous CORS permission from their server.
 - Requires Node.js 22+ and pnpm 10 (pinned in root `package.json`) for development.

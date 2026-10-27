@@ -1,0 +1,13 @@
+{
+  "name": "device-mockup-studio-docs",
+  "private": true,
+  "description": "Documentation site for Device Mockup Studio, built with VitePress.",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

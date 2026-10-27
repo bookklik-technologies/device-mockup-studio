@@ -19,7 +19,7 @@ See [HEADLESS.md](HEADLESS.md) for complete browser and Node examples, asset loa
 
 ## Scene model and factories
 
-- createScene(options?: Partial<SceneDocument>) supplies a 1200×900, 4s, 30fps scene. It validates the completed document.
+- `createScene(options?: Partial<SceneDocument>)` supplies a 1200×900, 4s, 30fps scene. It validates the completed document.
 - createMockup, createText, createShape supply node defaults. Validate the final document after adding arbitrary factory output; factories are construction helpers, not independent complete-scene validators.
 - SceneDocument version 1 contains assets, nodes, tracks, background, effects, seed, canvas and timeline settings.
 - x/y are center positions, width/height are local dimensions, scale is uniform, rotation/tiltX/tiltY are degrees. Node order is back-to-front. Hidden nodes do not draw.
