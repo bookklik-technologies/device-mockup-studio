@@ -1,7 +1,7 @@
 {
   "name": "@bookklik/device-mockup-studio",
   "version": "0.3.1",
-  "private": true,
+  "private": false,
   "license": "MIT",
   "homepage": "https://bookklik-technologies.github.io/device-mockup-studio/",
   "repository": {
